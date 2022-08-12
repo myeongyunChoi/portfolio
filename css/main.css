@@ -1,8 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -28,69 +27,52 @@ li {
   width: 100%;
   height: 100vh;
   left: 0;
+  transition: 0.5s all ease-in-out;
 }
 
 #guide {
-  width: 100%;
-  height: 100vh;
-  position: relative;
   top: 0;
+  background-color: rgb(41, 116, 6);
+}
+
+#guide_2 {
+  top: 100%;
+  background-color: black;
 }
 
 #cont_1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  top: 0;
-  background: salmon;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  top: 200%;
+  background: green;
   font-size: 10vw;
   color: #fff;
 }
 
 #cont_2 {
-  top: 100%;
+  top: 300%;
   background: #fff;
-  -webkit-transition: top 1s;
   transition: top 1s;
 }
 
 #slider {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  align-items: flex-start;
   position: absolute;
   width: 200vw;
   height: 400px;
   top: calc(50% - 150px);
   left: 10vw;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
 #slider li {
-  -webkit-box-flex: 0;
-      -ms-flex: none;
-          flex: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  flex: none;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   position: relative;
   overflow: hidden;
   height: 100%;
@@ -98,20 +80,14 @@ li {
   margin: 0 200px 0 0;
   background: slategray;
   border: 2px solid black;
-  -webkit-transition: -webkit-transform .2s;
-  transition: -webkit-transform .2s;
-  transition: transform .2s;
-  transition: transform .2s, -webkit-transform .2s;
+  transition: transform 0.2s;
 }
-
 #slider li:nth-child(2n) {
   top: -20%;
 }
-
 #slider li:nth-child(3n) {
   top: 20%;
 }
-
 #slider li div {
   position: relative;
   z-index: 5;
@@ -129,9 +105,7 @@ li {
   height: 10px;
   background: white;
   border-radius: 50%;
-  -webkit-transform: scale(0.1);
-          transform: scale(0.1);
-  -webkit-transition: all .8s;
-  transition: all .8s;
+  transform: scale(0.1);
+  transition: all 0.8s;
   z-index: 10;
 }

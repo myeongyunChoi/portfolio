@@ -2,31 +2,47 @@ const sl_wra = document.getElementById("wrapper")
 const cont_1 = document.getElementById('cont_1');
 const cont_2 = document.getElementById('cont_2');
 const slider = document.getElementById('slider');
+const cont = document.querySelectorAll(".cont");
 const gui = document.querySelector('#guide')
+const gui_2 = document.querySelector('#guide_2')
 const s_wid = slider.offsetWidth;
 const s_li = slider.children;
 
+const ss = cont.offsetTop;
 let win_wid = window.innerWidth;
 let s_move_max = (s_wid - (win_wid*0.9)) * -1;
 let s_pos = 0;
 let li_pos = 0;
 
+let w = window.scrollY
 
 
-// gui.addEventListener('wheel',function(e){
-//     e.preventDefault;
-//     if(e.deltaY > 0){
-//         sl_wra.style.top = `-100%`;
-//     }
-// });
+
+
+gui.addEventListener('wheel',function(e){
+    e.preventDefault;
+    if(e.deltaY > 0){
+        gui_2.style.top = `0%`;
+    }
+});
+
+gui_2.addEventListener('wheel',function(e){
+    e.preventDefault;
+    if(e.deltaY > 0){
+        cont_1.style.top = `0%`;
+    }else if(e.deltaY < 0){
+        gui_2.style.top = `100%`;
+    }
+});
 
 cont_1.addEventListener('wheel',function(e){
     e.preventDefault;
     if(e.deltaY > 0){
         cont_2.style.top = `0%`;
+    }else if(e.deltaY < 0){
+        cont_1.style.top = `100%`;
     }
 });
-
 //휠이 굴러가면 탑0 wrapper이 position 가지고 있음
 
 
