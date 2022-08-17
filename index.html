@@ -12,44 +12,77 @@
 
 <body>
 
+    <div id="wrap">
 
+        <div id="load"></div>
 
-    <section id="wrapper">
-        <div id="guide" class="cont"></div>
-        <div id="guide_2" class="cont"></div>
+        <div id="open_page">
+            <div class="left_page"></div>
+            <div class="hook"></div>
+            <div class="right_page"></div>
+        </div>
 
-        <article class="cont" id="cont_1">
-            소개
-        </article>
+        <div id="skill_wrap">
+            <ul class="skill">
+                <li class="about"></li>
+                <li class="detail"></li>
+                <li class="plus"></li>
+            </ul>
+        </div>
 
-        <article class="cont" id="cont_2">
-            <ul id="slider">
+        <div id="project">
+            <div class="guide"></div>
+            <ul class="site_view">
                 <li>
-                    <div>1</div><span class="redSpan"></span>
+                    <h1>1</h1>
                 </li>
                 <li>
-                    <div>2</div><span class="redSpan"></span>
+                    <h1>2</h1>
                 </li>
                 <li>
-                    <div>3</div><span class="redSpan"></span>
+                    <h1>3</h1>
                 </li>
                 <li>
-                    <div>4</div><span class="redSpan"></span>
+                    <h1>4</h4>
                 </li>
                 <li>
-                    <div>5</div><span class="redSpan"></span>
-                </li>
-                <li>
-                    <div>6</div><span class="redSpan"></span>
+                    <h1>5</h1>
                 </li>
             </ul>
-        </article>
-    </section>
+        </div>
+
+        <div id="mail"></div>
+
+    </div>
 
     <script src="js/main.js"></script>
     <script src="js/main_scroll.js"></script>
     <script src="js/hover.js"></script>
-    <!-- <script src="js/hover___.js"></script>
+
+    <script>
+
+        const open_page = document.getElementById("open_page");
+        const page_piece = document.querySelectorAll("#open_page div");
+        const left_piece = document.querySelector(".left_page");
+        const hook = document.querySelector(".hook");
+        const right_piece = document.querySelector(".right_page");
+
+        open_page.addEventListener('wheel', function (e) {
+            e.preventDefault();
+            if (e.deltaY > 0) {
+                hook.style.transform = `translateY(-100%)`;
+
+                setTimeout(function () {
+                    left_piece.style.transform = `translatex(-100%)`;
+                    right_piece.style.transform = `translatex(100%)`;
+
+                    setTimeout(function () {
+                        open_page.style.display = `none`;
+                    }, 1500)
+                }, 1000)
+            }
+        }, { passive: false });
+    </script>
 </body>
 
 </html>
