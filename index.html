@@ -67,7 +67,7 @@
         const hook = document.querySelector(".hook");
         const right_piece = document.querySelector(".right_page");
 
-        open_page.addEventListener('wheel', function (e) {
+        open_page.addEventListener("wheel", function (e) {
             e.preventDefault();
             if (e.deltaY > 0) {
                 hook.style.transform = `translateY(-100%)`;
@@ -81,7 +81,56 @@
                     }, 1500)
                 }, 1000)
             }
-        }, { passive: false });
+        });
+
+
+        const skill_wrap = document.getElementById("skill_wrap");
+        const skill = document.querySelector(".skill")
+        const skill_wid = skill.clientWidth;
+
+        let move = 0;
+        let mi_mo = 0;
+
+        skill_wrap.addEventListener("wheel", function (e) {
+            e.preventDefault();
+            move -= e.deltaY;
+            
+            skill.style.transform = `translateX(${move}px)`
+
+            //전체 넓이를 구하고 최대치 최소치 구함
+            //최대치의 넓이의 음의 값
+            //최소치는 0
+        });
+
+
+        // cont_2.addEventListener('wheel', function (e) {
+        //     e.preventDefault;ㅌㅈ
+        //     if (e.deltaY < 0 && s_pos >= 0) {
+        //         setTimeout(() => {
+        //             cont_2.style.top = `100%`;
+        //         }, 500);
+        //         return;
+        //     }
+        //     move_slider(e.deltaY);
+        //     on_indicator();
+        // });
+
+        // function move_slider(amount) {
+        //     s_pos -= amount;
+        //     if (s_pos < s_move_max) {
+        //         s_pos = s_move_max;
+        //         return;
+        // 전체를 뻬고도 더 빼야 할 때
+
+        //     } else if (s_pos > 0) {
+        //         s_pos = 0;
+        //         return;
+        //     }
+        // 0아예 뺄 게 없을 때
+        //     slider.style.transform = `translateX(${s_pos}px)`;
+        //     li_upDown(amount);
+
+        // }
     </script>
 </body>
 
