@@ -138,25 +138,40 @@
 
             const project_wrap_top = document.getElementById("skill_wrap").clientHeight;
             const img_over = document.querySelector(".img_overlay");
+            const img_box = document.querySelector(".imgbox");
 
             let win_top = window.scrollY;
-            let zoom_val = win_top - project_wrap_top;
+            let zoom_val = win_top - (project_wrap_top+200);
             let amount = 0;
 
 
             if (win_top >= project_wrap_top) {
                 img_over.style.background = "white";
-                // zoom();
+                if(win_top >= project_wrap_top + 200){
+                zoom();
+                }
             } else {
                 img_over.style = "";
             }
 
-            // function zoom() {
-            //     amount = 1+ zoom_val * 0.001;
-            //     img_over.style.transform = `scale(${amount},${amount})`;
+            function zoom() {
+                amount = 1+ zoom_val * 0.003;
+                opa = 1 - zoom_val * 0.001;
+                img_box.style.transform = `scale(${amount},${amount})`;
+                img_box.style.opacity = `${opa}`;
 
-            // }
-            // 부모요소 값을 지정한 후에 부모 요소를 늘리고 em으로 자식 요소의 값을 매길 것
+            }
+
+            const pj = document.getElementById("project");
+
+
+            if(win_top >= project_wrap_top*2){
+                img_box.style = "";
+                img_box.style.display =`none`;
+                // pj.style.position = `fixed`;
+            }else{
+                img_box.style.display =`block`;
+            }
         })
 
 
