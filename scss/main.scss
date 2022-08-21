@@ -82,7 +82,6 @@ a {
     height: 100vh;
     position: relative;
     overflow: hidden;
-
 }
 
 
@@ -92,7 +91,7 @@ a {
     background-color: antiquewhite;
     display: flex;
     position: absolute;
-    transition: 0.5s all;
+    transition: 0.2s all;
 
     li {
         width: 100vw;
