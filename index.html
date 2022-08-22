@@ -42,23 +42,36 @@
 
         </div>
 
+        <div class="middle_line"></div>
         <div id="project">
-            <div class="guide"></div>
+            <div class="guide">
+                <div class="site_name">
+                    <h4>What we made</h4>
+                </div>
+                <div class="site_detail">
+                    <h2>WE WORKS IT!</h2>
+                    <P>Since.</P>
+                    <p>여기는 사이트 설명글 5줄 이내</p>
+                </div>
+            </div>
             <ul class="site_view">
                 <li>
-                    <h1>1</h1>
                 </li>
                 <li>
-                    <h1>2</h1>
+                    <h1 class="site_txt">2</h1>
+                    <div class="site_img_box"></div>
                 </li>
                 <li>
-                    <h1>3</h1>
+                    <div class="site_img_box"></div>
+                    <h1 class="site_txt">3</h1>
                 </li>
                 <li>
-                    <h1>4</h4>
+                    <h1 class="site_txt">4</h4>
+                    <div class="site_img_box"></div>
                 </li>
                 <li>
-                    <h1>5</h1>
+                    <div class="site_img_box"></div>
+                    <h1 class="site_txt">5</h1>
                 </li>
             </ul>
         </div>
@@ -139,40 +152,65 @@
             const project_wrap_top = document.getElementById("skill_wrap").clientHeight;
             const img_over = document.querySelector(".img_overlay");
             const img_box = document.querySelector(".imgbox");
+            const middle_li = document.querySelector(".middle_line");
+            const pj = document.getElementById("project");
+            const pj_top = pj.offsetTop;
 
             let win_top = window.scrollY;
-            let zoom_val = win_top - (project_wrap_top+200);
+            let zoom_val = win_top - (project_wrap_top + 200);
             let amount = 0;
 
 
             if (win_top >= project_wrap_top) {
                 img_over.style.background = "white";
-                if(win_top >= project_wrap_top + 200){
-                zoom();
+                if (win_top >= project_wrap_top + 200) {
+                    zoom();
                 }
             } else {
                 img_over.style = "";
             }
 
             function zoom() {
-                amount = 1+ zoom_val * 0.003;
+                amount = 1 + zoom_val * 0.003;
                 opa = 1 - zoom_val * 0.001;
+                line = zoom_val * 0.037;
+
                 img_box.style.transform = `scale(${amount},${amount})`;
                 img_box.style.opacity = `${opa}`;
 
+                if (opa <= 0) {
+                    img_box.style = ``;
+                    img_box.style.display = `none`;
+                    middle_li.style.opacity = `1`;
+                    if (line >= 95) {
+                        line = 95;
+                    } else if (line <= 5) {
+                        line = 5;
+                    }
+                    middle_li.style.width = `${line}%`
+                } else {
+
+                    img_box.style.display = `block`;
+                    middle_li.style.opacity = `0`;
+                }
+
             }
 
-            const pj = document.getElementById("project");
 
 
-            if(win_top >= project_wrap_top*2){
-                img_box.style = "";
-                img_box.style.display =`none`;
-                // pj.style.position = `fixed`;
-            }else{
-                img_box.style.display =`block`;
+            //프로젝트
+
+            if (win_top >= pj_top) {
+                pj.style.opacity = `1`;
+            } else {
+                pj.style = ``;
             }
         })
+
+        
+
+        // transform: translate3d(0px, 0px, 0px) skew(0deg, 5.1971deg);
+        // --aspect-ratio: 700/470;
 
 
 
