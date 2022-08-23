@@ -13,12 +13,12 @@
 <body>
 
     <div id="wrap">
-
         <div id="load"></div>
-
         <div id="open_page">
             <div class="left_page"></div>
-            <div class="hook"></div>
+            <div class="hook">
+                <p>OPNE</p> <img src="img/open_icon.png" alt="open_icon">
+            </div>
             <div class="right_page"></div>
         </div>
 
@@ -28,6 +28,7 @@
                 <li class="detail"></li>
                 <li class="plus"></li>
             </ul>
+            <a href="#" class="dm_btn"><img src="img/dm_icon.png" alt="dm_icon"> EASY <span> DM</span></a>
         </div>
 
         <div id="project_wrap">
@@ -67,7 +68,7 @@
                 </li>
                 <li>
                     <h1 class="site_txt">4</h4>
-                    <div class="site_img_box"></div>
+                        <div class="site_img_box"></div>
                 </li>
                 <li>
                     <div class="site_img_box"></div>
@@ -91,6 +92,17 @@
         const left_piece = document.querySelector(".left_page");
         const hook = document.querySelector(".hook");
         const right_piece = document.querySelector(".right_page");
+
+        const dm_btn = document.querySelector(".dm_btn");
+        const dm_img = document.querySelector(".dm_btn img");
+
+        dm_btn.addEventListener("mouseover", ()=>{
+            dm_img.setAttribute("src","img/dm_icon_up.png");
+        });
+
+        dm_btn.addEventListener("mouseout", ()=>{
+            dm_img.setAttribute("src","img/dm_icon.png");
+        });
 
         open_page.addEventListener("wheel", function (e) {
 
@@ -125,9 +137,7 @@
         let mi_mo = 0;
 
 
-        skill_wrap.addEventListener("wheel", function (e) {
-
-
+        skill_wrap.addEventListener("wheel",(e) => {
 
             if (move > max_mov) {
                 e.preventDefault();
@@ -147,9 +157,10 @@
 
         //세로 스크롤 이벤트
 
-        window.addEventListener("scroll", function () {
+        window.addEventListener("scroll",() => {
 
-            const project_wrap_top = document.getElementById("skill_wrap").clientHeight;
+            const win_hi = window.innerHeight;
+
             const img_over = document.querySelector(".img_overlay");
             const img_box = document.querySelector(".imgbox");
             const middle_li = document.querySelector(".middle_line");
@@ -157,13 +168,13 @@
             const pj_top = pj.offsetTop;
 
             let win_top = window.scrollY;
-            let zoom_val = win_top - (project_wrap_top + 200);
+            let zoom_val = win_top - (win_hi + 200);
             let amount = 0;
 
 
-            if (win_top >= project_wrap_top) {
+            if (win_top >= win_hi) {
                 img_over.style.background = "white";
-                if (win_top >= project_wrap_top + 200) {
+                if (win_top >= win_hi + 200) {
                     zoom();
                 }
             } else {
@@ -196,8 +207,6 @@
 
             }
 
-
-
             //프로젝트
 
             if (win_top >= pj_top) {
@@ -205,13 +214,37 @@
             } else {
                 pj.style = ``;
             }
+
+
+            const site_li = document.querySelectorAll(".site_view li");
+            const site_img_li = document.querySelectorAll(".site_img_box");
+
+            let skew_val = 0;
+
+            for (let i = 1; i < site_li.length; i++) {
+
+                const li_top = site_li[i].offsetTop + pj_top - (win_hi / 2);
+
+                if (win_top >= li_top) {
+                    skew_val = (li_top - win_top) * 0.0013;
+
+                    site_img_li[i - 1].style.transform = `skew(0deg, ${skew_val}deg)`;
+                    site_img_li[i - 1].style.marginTop = `0`;
+                    middle_li.style.width = `42%`;
+                } else {
+                    site_img_li[i - 1].style = ``;
+                }
+            }
+
+            const mail = document.querySelector("#mail");
+            const mail_top = mail.offsetTop;
+
+            if (win_top > mail_top - win_hi) {
+                middle_li.style.display = `none`;
+            } else {
+                middle_li.style.display = `block`;
+            }
         })
-
-        
-
-        // transform: translate3d(0px, 0px, 0px) skew(0deg, 5.1971deg);
-        // --aspect-ratio: 700/470;
-
 
 
 
