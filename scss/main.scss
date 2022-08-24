@@ -290,6 +290,17 @@ a {
     transform: skew(0deg, 5.1971deg);
     margin-top: 15rem;
     transition: 1s ease-in-out all;
+    overflow: hidden;
+    position: relative;
+
+    img{
+        width: 100rem;
+        transform:rotate3d(1, 0, -1, 33deg) scale(2);
+        position: absolute;
+        top: -5rem;
+        left: -17.5rem;
+        transition: 1s ease-in-out all;
+    }
 }
 
 #mail {

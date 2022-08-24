@@ -47,10 +47,10 @@
         <div id="project">
             <div class="guide">
                 <div class="site_name">
-                    <h4>What we made</h4>
+                    <h4>What i made</h4>
                 </div>
                 <div class="site_detail">
-                    <h2>WE WORKS IT!</h2>
+                    <h2>INTRODUCING OUR WEBSITE!</h2>
                     <P>Since.</P>
                     <p>여기는 사이트 설명글 5줄 이내</p>
                 </div>
@@ -59,20 +59,34 @@
                 <li>
                 </li>
                 <li>
+                    <h1 class="site_txt">1</h1>
+                    <div class="site_img_box">
+                        <img src="img/hotel.png" alt="hotel_site">
+                    </div>
+                </li>
+                <li>
+                    <div class="site_img_box">
+                        <img src="img/flower.png" alt="flower_site">
+                    </div>
                     <h1 class="site_txt">2</h1>
-                    <div class="site_img_box"></div>
                 </li>
                 <li>
-                    <div class="site_img_box"></div>
-                    <h1 class="site_txt">3</h1>
+                    <h1 class="site_txt">3</h4>
+                    <div class="site_img_box">
+                        <img src="img/book.png" alt="book_site">
+                    </div>
                 </li>
                 <li>
-                    <h1 class="site_txt">4</h4>
-                        <div class="site_img_box"></div>
+                    <div class="site_img_box">
+                        <img src="img/space.png" alt="art_site">
+                    </div>
+                    <h1 class="site_txt">4</h1>
                 </li>
                 <li>
-                    <div class="site_img_box"></div>
                     <h1 class="site_txt">5</h1>
+                    <div class="site_img_box">
+                        <img src="img/guitar.png" alt="guitar_site">
+                    </div>
                 </li>
             </ul>
         </div>
@@ -218,6 +232,11 @@
 
             const site_li = document.querySelectorAll(".site_view li");
             const site_img_li = document.querySelectorAll(".site_img_box");
+            const site_img = document.querySelectorAll(".site_img_box img");
+
+            for( let s = 0; s < site_img.length; s++){
+                // site_img[s].style.transform = `rotate3d(1, 0, -1, 33deg) scale(1)`;
+            }
 
             let skew_val = 0;
 
@@ -227,12 +246,13 @@
 
                 if (win_top >= li_top) {
                     skew_val = (li_top - win_top) * 0.0013;
-
-                    site_img_li[i - 1].style.transform = `skew(0deg, ${skew_val}deg)`;
+                    site_img_li[i - 1].style.transform = `skew(0deg, 0deg)`;
                     site_img_li[i - 1].style.marginTop = `0`;
                     middle_li.style.width = `42%`;
+
                 } else {
                     site_img_li[i - 1].style = ``;
+                    site_img[i-1].style=``;
                 }
             }
 
