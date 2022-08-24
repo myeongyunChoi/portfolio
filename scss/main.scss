@@ -295,11 +295,10 @@ a {
 
     img{
         width: 100rem;
-        transform:rotate3d(1, 0, -1, 33deg) scale(2);
+        transform:rotate3d(1, 0, -1, 33deg) scale(5);
         position: absolute;
         top: -5rem;
         left: -17.5rem;
-        transition: 1s ease-in-out all;
     }
 }
 
