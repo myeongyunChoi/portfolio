@@ -25,7 +25,10 @@
         <div id="skill_wrap">
             <ul class="skill">
                 <li class="about"></li>
-                <li class="detail"></li>
+                <li class="detail">
+                    먀먀먀먀먀먀먀
+                    <div class="detail_overlay"></div>
+                </li>
                 <li class="plus"></li>
             </ul>
             <a href="#" class="dm_btn"><img src="img/dm_icon.png" alt="dm_icon"> EASY <span> DM</span></a>
@@ -56,10 +59,15 @@
                 </div>
             </div>
             <ul class="site_view">
+                <li></li>
                 <li>
-                </li>
-                <li>
-                    <h1 class="site_txt">1</h1>
+                    <div class="site_txt">
+                        <p>Mobile Design /</p>
+                        <p>Tablet Design /</p>
+                        <p>Responsive Publishing /</p>
+                        <p>UI Dev /</p>
+                        <p>Web Dev /</p>
+                    </div>
                     <div class="site_img_box">
                         <img src="img/hotel.png" alt="hotel_site">
                     </div>
@@ -68,22 +76,41 @@
                     <div class="site_img_box">
                         <img src="img/flower.png" alt="flower_site">
                     </div>
-                    <h1 class="site_txt">2</h1>
+                    <div class="site_txt">
+                        <p>Mobile Design /</p>
+                        <p>Tablet Design /</p>
+                        <p>Responsive Publishing /</p>
+                        <p>UI Dev /</p>
+                        <p>Web Dev /</p>
+                    </div>
                 </li>
                 <li>
-                    <h1 class="site_txt">3</h4>
-                        <div class="site_img_box">
-                            <img src="img/book.png" alt="book_site">
-                        </div>
+                    <div class="site_txt">
+                        <p>UI Dev /</p>
+                        <p>Web Dev /</p>
+                        <p>Ajox /</p>
+                    </div>
+                    <div class="site_img_box">
+                        <img src="img/book.png" alt="book_site">
+                    </div>
                 </li>
                 <li>
                     <div class="site_img_box">
                         <img src="img/space.png" alt="art_site">
                     </div>
-                    <h1 class="site_txt">4</h1>
+                    <div class="site_txt">
+                        <p>Mobile Design /</p>
+                        <p>Tablet Design /</p>
+                        <p>Responsive Publishing /</p>
+                        <p>UI Dev /</p>
+                        <p>Web Dev /</p>
+                    </div>
                 </li>
                 <li>
-                    <h1 class="site_txt">5</h1>
+                    <div class="site_txt">
+                        <p>UI Dev /</p>
+                        <p>Web Dev /</p>
+                    </div>
                     <div class="site_img_box">
                         <img src="img/guitar.png" alt="guitar_site">
                     </div>
@@ -143,7 +170,10 @@
         const skill_wrap_wid = skill_wrap.clientWidth;
         const skill = document.querySelector(".skill");
         const skill_wid = skill.clientWidth;
-        const max_mov = (skill_wid - skill_wrap_wid) * -1
+        const max_mov = (skill_wid - skill_wrap_wid) * -1;
+        const win_wi = window.innerWidth;
+        const detail = document.querySelector(".detail");
+        const detail_overlay = document.querySelector(".detail_overlay");
         //가로스크롤 최대값
 
         let win_top = window.scrollY;
@@ -165,6 +195,18 @@
                     move = 0
                 }
                 skill.style.transform = `translateX(${move}px)`
+            }
+
+            if(move < (win_wi /2)*-1){
+                detail.classList.add("fade_in");
+                detail_overlay.style.width = `100%`;
+                setTimeout(function(){
+                    detail_overlay.style.left= `100%`;
+                },500);
+            }else{
+                detail.classList.remove("fade_in");
+                detail_overlay.style.width = `0`;
+                detail_overlay.style.left= `0`;
             }
         });
 
@@ -232,19 +274,27 @@
             const site_li = document.querySelectorAll(".site_view li");
             const site_img_li = document.querySelectorAll(".site_img_box");
             const site_img = document.querySelectorAll(".site_img_box img");
+            const site_txt = document.querySelectorAll(".site_txt");
 
             let img_zoom = 0;
-
-
+            let num = 0;
 
             // let skew_val = 0;
 
             for (let i = 1; i < site_li.length; i++) {
 
+
+                if (i % 2 == 0) { //짝수인 경우
+                    num = i;
+                } else {//홀수인 경우
+                    odd = i;
+                }
+
                 let li_top = site_li[i].offsetTop + pj_top - (win_hi * 0.38);
+                //부모 요소 탑 값에 자식 요소 탑값을 더한 값
 
                 if (win_top >= li_top - win_hi) {
-                    img_zoom = li_top / (win_top -500);
+                    img_zoom = li_top / (win_top - 500);
                     site_img[i - 1].style.transform = `rotate3d(1, 0, -1, 33deg) scale(${img_zoom})`;
                 }
 
@@ -254,8 +304,15 @@
                     site_img_li[i - 1].style.marginTop = `0`;
                     middle_li.style.width = `42%`;
 
+                    site_txt[num].style.transform = `skew(0deg, 0deg)`;
+                    site_txt[num].style.marginTop = `0`;
+
+                    site_txt[odd].style.transform = `skew(0deg, 0deg)`;
+                    site_txt[odd].style.marginTop = `0`;
+
                 } else {
                     site_img_li[i - 1].style = ``;
+                    site_txt[i-1].style = ``;
                 }
             }
 

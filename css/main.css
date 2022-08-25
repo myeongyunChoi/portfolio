@@ -59,7 +59,7 @@ a {
 #open_page .left_page {
   width: 82.5%;
   height: 100%;
-  background-color: black;
+  background-color: #000;
   -webkit-transition: 1s all ease-in-out;
   transition: 1s all ease-in-out;
 }
@@ -67,7 +67,7 @@ a {
 #open_page .hook {
   width: 5%;
   height: 100%;
-  background-color: #494949;
+  background-color: #858585;
   -webkit-transition: 1s all ease-in-out;
   transition: 1s all ease-in-out;
   position: relative;
@@ -106,7 +106,7 @@ a {
 #open_page .right_page {
   width: 12.5%;
   height: 100%;
-  background-color: black;
+  background-color: #000;
   -webkit-transition: 1s all ease-in-out;
   transition: 1s all ease-in-out;
   position: relative;
@@ -119,6 +119,7 @@ a {
   overflow: hidden;
   -webkit-transition: 0.5s ease all;
   transition: 0.5s ease all;
+  background-color: #f2f2f2;
 }
 
 #skill_wrap .dm_btn {
@@ -171,6 +172,26 @@ a {
   width: 100vw;
   height: 100%;
   border: 1px solid black;
+}
+
+.detail {
+  background-color: #c4c4c4;
+  position: relative;
+  opacity: 0;
+  overflow: hidden;
+  -webkit-transition: 0.5s all ease-in-out;
+  transition: 0.5s all ease-in-out;
+}
+
+.detail_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: green;
+  width: 0;
+  height: 100%;
+  -webkit-transition: 0.5s all ease-in-out;
+  transition: 0.5s all ease-in-out;
 }
 
 #project_wrap {
@@ -292,6 +313,30 @@ a {
   margin-top: 2rem;
 }
 
+.site_txt {
+  width: auto;
+  height: 100%;
+  font-size: 1.75rem;
+  line-height: 2.2rem;
+  -webkit-transition: 1s ease-in-out all;
+  transition: 1s ease-in-out all;
+}
+
+.site_txt:nth-child(2n+1) {
+  margin-right: 3rem;
+  text-align: right;
+  -webkit-transform: skew(0deg, 5deg);
+          transform: skew(0deg, 5deg);
+  margin-top: 15rem;
+}
+
+.site_txt:nth-child(2n) {
+  margin-left: 3rem;
+  -webkit-transform: skew(0deg, -5deg);
+          transform: skew(0deg, -5deg);
+  margin-top: 15rem;
+}
+
 .site_view {
   width: 55%;
 }
@@ -302,8 +347,9 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .site_view li:first-child {
@@ -317,8 +363,8 @@ a {
   -webkit-box-shadow: 10px 10px 10px #c4c4c4;
           box-shadow: 10px 10px 10px #c4c4c4;
   border-radius: 20px 0 20px;
-  -webkit-transform: skew(0deg, 5.1971deg);
-          transform: skew(0deg, 5.1971deg);
+  -webkit-transform: skew(0deg, 5deg);
+          transform: skew(0deg, 5deg);
   margin-top: 15rem;
   -webkit-transition: 1s ease-in-out all;
   transition: 1s ease-in-out all;
@@ -339,4 +385,20 @@ a {
   width: 100%;
   height: 100vh;
   border: 1px solid black;
+}
+
+.fade_in {
+  opacity: 1;
+}
+
+.fade_out {
+  opacity: 1;
+}
+
+.block {
+  display: block;
+}
+
+.none {
+  display: none;
 }
