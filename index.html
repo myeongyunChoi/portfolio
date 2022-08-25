@@ -283,12 +283,11 @@
 
             for (let i = 1; i < site_li.length; i++) {
 
-
-                if (i % 2 == 0) { //짝수인 경우
-                    num = i;
-                } else {//홀수인 경우
-                    odd = i;
-                }
+                // if (i % 2 == 0) { //짝수인 경우
+                //     num = i;
+                // } else {//홀수인 경우
+                //     odd = i;
+                // }
 
                 let li_top = site_li[i].offsetTop + pj_top - (win_hi * 0.38);
                 //부모 요소 탑 값에 자식 요소 탑값을 더한 값
@@ -304,11 +303,8 @@
                     site_img_li[i - 1].style.marginTop = `0`;
                     middle_li.style.width = `42%`;
 
-                    site_txt[num].style.transform = `skew(0deg, 0deg)`;
-                    site_txt[num].style.marginTop = `0`;
-
-                    site_txt[odd].style.transform = `skew(0deg, 0deg)`;
-                    site_txt[odd].style.marginTop = `0`;
+                    site_txt[i-1].style.transform = `skew(0deg, 0deg)`;
+                    site_txt[i-1].style.marginTop = `0`;
 
                 } else {
                     site_img_li[i - 1].style = ``;

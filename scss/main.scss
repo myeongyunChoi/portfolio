@@ -150,7 +150,6 @@ a {
     li {
         width: 100vw;
         height: 100%;
-        border: 1px solid black;
     }
 }
 
@@ -308,6 +307,7 @@ a {
 
 .site_view {
     width: 55%;
+    z-index: 500;
 
     li {
         width: 100%;
