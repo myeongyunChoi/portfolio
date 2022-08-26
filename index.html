@@ -31,8 +31,28 @@
         <div id="skill_wrap">
             <ul class="skill">
                 <li class="about">
-                    <!-- <h3>언제나 꿈구고 싶은</h3>
-                    <h3>프론트 앤드 개발자 최명윤입니다.</h3> -->
+                    <div class="about_title">
+                        <h3>언제나 꿈꾸고 싶은</h3>
+                        <h3>개발자 최명윤입니다.</h3>
+                        <p> 2022 PORTFOLIO</p>
+                    </div>
+                    <div class="about_contents">
+                        <h4>"프론트앤드 개발자를 꿈꾸는 저를 소개합니다"</h4>
+
+                        <p>안녕하세요. 부족함과 미약함을 자양분으로 성장하는 최명윤입니다.</p>
+                        <p>수많은 함수나 코드를 알아가고 외우는 것보다,</p>
+                        <p>스스로의 부족함을 깨닫고 채우기 위해 공들였습니다.</p>
+                        <p>언제나 배움의 자세를 멈추지 않고 발전하는 개발자가 제 꿈입니다.</p>
+                        <p>보시기제 부족한 부분들은, 추후에 저의 자양분으로 만들어내겠습니다.</p>
+<!-- 
+                            <li><h4>Profile</h4></li>
+                            <li>이름 : 최명윤 (Choi MyeongYun)</li>
+                            <li>나이 : 25 (1998.08.26)</li>
+                            <li>주소 : 경기도 안산시 단원구</li>
+                            <li>연락처 : 01023862257</li>
+                            <li>E-mail : chmy2257@naver.com</li>
+                        </ul> -->
+                    </div>
                 </li>
                 <li class="detail">
                     먀먀먀먀먀먀먀
@@ -146,9 +166,12 @@
         const dm_btn = document.querySelector(".dm_btn");
         const dm_img = document.querySelector(".dm_btn img");
 
-        dm_btn.addEventListener("mouseover", () => {
-            dm_img.setAttribute("src", "img/dm_icon_up.png");
-        });
+        const about_t = document.querySelector(".about_title");
+        const about_c = document.querySelector(".about_contents")
+
+            dm_btn.addEventListener("mouseover", () => {
+                dm_img.setAttribute("src", "img/dm_icon_up.png");
+            });
 
         dm_btn.addEventListener("mouseout", () => {
             dm_img.setAttribute("src", "img/dm_icon.png");
@@ -169,8 +192,18 @@
 
                     setTimeout(function () {
                         open_page.style.display = `none`;
-                    }, 1500)
+                        show_name();
+                    }, 1000)
                 }, 1000)
+            }
+
+        //about_title 효과
+            function show_name() {
+                about_t.classList.add("fade_in");
+                setTimeout(function(){
+                    about_t.classList.add("about_slide");
+                    about_c.classList.add("fade_in");
+                },1200);
             }
         });
 
@@ -206,16 +239,16 @@
                 skill.style.transform = `translateX(${move}px)`
             }
 
-            if(move < (win_wi /2)*-1){
+            if (move < (win_wi / 2) * -1) {
                 detail.classList.add("fade_in");
                 detail_overlay.style.width = `100%`;
-                setTimeout(function(){
-                    detail_overlay.style.left= `100%`;
-                },500);
-            }else{
+                setTimeout(function () {
+                    detail_overlay.style.left = `100%`;
+                }, 500);
+            } else {
                 detail.classList.remove("fade_in");
                 detail_overlay.style.width = `0`;
-                detail_overlay.style.left= `0`;
+                detail_overlay.style.left = `0`;
             }
         });
 
@@ -264,7 +297,6 @@
                     }
                     middle_li.style.width = `${line}%`
                 } else {
-
                     img_box.style.display = `block`;
                     middle_li.style.opacity = `0`;
                 }
@@ -312,12 +344,12 @@
                     site_img_li[i - 1].style.marginTop = `0`;
                     middle_li.style.width = `42%`;
 
-                    site_txt[i-1].style.transform = `skew(0deg, 0deg)`;
-                    site_txt[i-1].style.marginTop = `0`;
+                    site_txt[i - 1].style.transform = `skew(0deg, 0deg)`;
+                    site_txt[i - 1].style.marginTop = `0`;
 
                 } else {
                     site_img_li[i - 1].style = ``;
-                    site_txt[i-1].style = ``;
+                    site_txt[i - 1].style = ``;
                 }
             }
 
