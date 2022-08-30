@@ -298,8 +298,17 @@ a {
   margin-top: -33rem;
 }
 
+.css_icon {
+  width: 200%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .css_icon img {
-  width: 100%;
+  width: 70%;
+  height: 70%;
+  margin-right: 3rem;
 }
 
 .active {
@@ -310,7 +319,7 @@ a {
 }
 
 .active img {
-  width: 100%;
+  width: 70%;
 }
 
 .active_title {
