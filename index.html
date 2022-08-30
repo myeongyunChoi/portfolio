@@ -86,18 +86,18 @@
                             </div>
                         </li>
                         <li>
-                            <div class="active">
-                                <h3>Photoshop</h3>
-                                <h3>Illustrator</h3>
+                            <div class="active design">
+                                <img src="img/photoshop.svg" alt="photoshop">
+                                <img src="img/illustrator.svg" alt="illustrator">
                             </div>
                         </li>
                     </ul>
                     <div class="active_txt">
-                        <h4>Visual Studio를 이용한 기본적인 코딩부터</h4>
+                        <h4 class="active_line">Visual Studio를 이용한 기본적인 코딩부터</h4>
 
-                        <h4>JavaScript를 이용하고 응용합니다</h4>
+                        <h4 class="active_line">JavaScript를 이용하고 응용합니다</h4>
 
-                        <h4>사용자를 위한 디자인도 가능</h4>
+                        <h4 class="active_line">디자인 작업도 가능합니다 :)</h4>
                     </div>
                 </li>
                 <li class="plus"></li>
@@ -219,7 +219,7 @@
             dm_img.setAttribute("src", "img/dm_icon.png");
         });
 
-        open_page.addEventListener("wheel", function (e) {
+        open_page.addEventListener("wheel", function openPage(e) {
 
             if (win_top == 0) {
                 e.preventDefault();
@@ -259,6 +259,7 @@
         const detail = document.querySelector(".detail");
         const detail_overlay = document.querySelector(".detail_overlay");
         const active = document.querySelectorAll(".active");
+        const active_txt = document.querySelectorAll(".active_txt h4");
         //가로스크롤 최대값
 
         let win_top = window.scrollY;
@@ -271,7 +272,7 @@
 
             if (move > max_mov) {
                 e.preventDefault();
-            }
+            }//가로 스크롤이 끝날 때까지 스크롤 기본 이벤트를 제한
 
             if (window.scrollY <= 0) {
                 move -= e.deltaY;
@@ -282,7 +283,7 @@
                 }
                 skill.style.transform = `translateX(${move}px)`;
                 li_upDown(move);
-            }
+            }//휠값마다 skill의 가로 값을 변화
 
             if (move < (win_wi / 2) * -1) {
                 detail.classList.add("fade_in");
@@ -300,10 +301,19 @@
                 li_pos = move;
                 for (let i = 0; i < active.length; i++) {
                     if (i % 2 != 0) {
-                        active[i].style.transform = `translateY(${li_pos / (i * 6)}px)`;
+                        active[i].style.transform = `translateY(${li_pos / (i * 7)}px)`;
                     } else {
-                        active[i].style.transform = `translateY(${-li_pos / (i *6)}px)`;
+                        active[i].style.transform = `translateY(${-li_pos / (i * 7)}px)`;
                     }
+                }
+            }//홀수와 짝수를 구분 후 휠마다 각각 위치 값을 변환 active의 높이를 변경
+
+            for (let i = 0; i < active_txt.length; i++) {
+                let active_txt_left = active_txt[i].offsetLeft/2 + win_wi;
+                if(move < active_txt_left *-1){
+                    active_txt[i].style.opacity=`1`;
+                }else{
+                    active_txt[i].style=``;
                 }
             }
 
