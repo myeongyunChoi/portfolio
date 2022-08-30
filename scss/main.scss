@@ -165,16 +165,20 @@ a {
 
 
 .skill {
-    width: 300%;
+    width: 475%;
     height: 100vh;
     display: flex;
     position: absolute;
     transition: 0.2s all;
 
-    li {
+    &>li {
         width: 100vw;
         height: 100%;
         position: relative;
+
+        &:nth-child(2){
+            width: 175vw;
+        }
     }
 }
 
@@ -209,16 +213,17 @@ a {
         font-size: 3rem;
         margin-bottom: 4rem;
     }
-
-
 }
 
 .detail{
-    background-color: #c4c4c4;
+    width: 175vw;
+    background-color: #e5e5e5;
     position: relative;
     opacity: 0;
     overflow: hidden;
     transition: 0.5s all ease-in-out;
+    display: flex;
+    align-items: center;
 }
 
 .detail_overlay{
@@ -229,8 +234,73 @@ a {
     width: 0;
     height: 100%;
     transition: 0.5s all ease-in-out;
+    z-index: 20;
 }
 
+.skill_box{
+    width: 175vw;
+    height: 30rem;
+    // background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    li{
+        width: 17%;
+        height: 100%;
+        position: relative;
+
+
+        &:nth-child(4){
+            margin-top: -27rem;
+        }
+
+        &:nth-child(6){
+            margin-top: -33rem;
+        }
+    }
+}
+
+.css_icon{
+    img{
+        width: 100%;
+        }
+}
+
+.active{
+    width: 60%;
+    height: 100%;
+    position: absolute;
+    top: 10rem;
+
+    img{
+        width: 100%;
+    }
+}
+
+.active_title{
+    background-color: #e5e5e5;
+    font-size: 2.4rem;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.active_txt{
+    width: 74%;
+    margin-left:24%;
+    padding-right: 1%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    letter-spacing: 0.5rem;
+}
 
 #project_wrap {
     width: 100%;

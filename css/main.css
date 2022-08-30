@@ -185,7 +185,7 @@ a {
 }
 
 .skill {
-  width: 300%;
+  width: 475%;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -195,10 +195,14 @@ a {
   transition: 0.2s all;
 }
 
-.skill li {
+.skill > li {
   width: 100vw;
   height: 100%;
   position: relative;
+}
+
+.skill > li:nth-child(2) {
+  width: 175vw;
 }
 
 .about_title {
@@ -240,12 +244,19 @@ a {
 }
 
 .detail {
-  background-color: #c4c4c4;
+  width: 175vw;
+  background-color: #e5e5e5;
   position: relative;
   opacity: 0;
   overflow: hidden;
   -webkit-transition: 0.5s all ease-in-out;
   transition: 0.5s all ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .detail_overlay {
@@ -257,6 +268,79 @@ a {
   height: 100%;
   -webkit-transition: 0.5s all ease-in-out;
   transition: 0.5s all ease-in-out;
+  z-index: 20;
+}
+
+.skill_box {
+  width: 175vw;
+  height: 30rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.skill_box li {
+  width: 17%;
+  height: 100%;
+  position: relative;
+}
+
+.skill_box li:nth-child(4) {
+  margin-top: -27rem;
+}
+
+.skill_box li:nth-child(6) {
+  margin-top: -33rem;
+}
+
+.css_icon img {
+  width: 100%;
+}
+
+.active {
+  width: 60%;
+  height: 100%;
+  position: absolute;
+  top: 10rem;
+}
+
+.active img {
+  width: 100%;
+}
+
+.active_title {
+  background-color: #e5e5e5;
+  font-size: 2.4rem;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.active_txt {
+  width: 74%;
+  margin-left: 24%;
+  padding-right: 1%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 2rem;
+  letter-spacing: 0.5rem;
 }
 
 #project_wrap {
