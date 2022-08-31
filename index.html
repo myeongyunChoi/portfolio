@@ -102,7 +102,7 @@
                 </li>
                 <li class="plus"></li>
             </ul>
-            <a href="#" class="dm_btn"><img src="img/dm_icon.png" alt="dm_icon"> EASY <span> DM</span></a>
+            <a href="#" class="dm_btn white_dm"><img src="img/dm_icon.png" alt="dm_icon"> EASY <span> DM</span></a>
         </div>
 
         <div id="project_wrap">
@@ -120,12 +120,19 @@
         <div class="middle_line"></div>
         <div id="project">
             <div class="guide">
-                <div class="site_name">
+                <div class="site_guide">
                     <h4>What i made</h4>
                 </div>
                 <div class="site_detail">
-                    <h2>INTRODUCING OUR WEBSITE!</h2>
-                    <P>Since.</P>
+                    <h2 class="site_title">INTRODUCING OUR WEBSITE!</h2>
+                    <h2 class="site_title sigliel">SIGLIEL HOTEL</h2>
+                    <h2 class="site_title flower">FLOWER CITY</h2>
+                    <h2 class="site_title book">MILLIE BOOK SITE</h2>
+                    <h2 class="site_title art">SPACE ISU</h2>
+                    <h2 class="site_title guitar">Guitar Mall</h2>
+
+                    <P class="site_name">site name</P>
+                    <a href="#" class="site_more">Visit Site</a>
                     <p>여기는 사이트 설명글 5줄 이내</p>
                 </div>
             </div>
@@ -159,7 +166,8 @@
                     <div class="site_txt">
                         <p>UI Dev /</p>
                         <p>Web Dev /</p>
-                        <p>Ajox /</p>
+                        <p>Ajax /</p>
+                        <p>Open Api</p>
                     </div>
                     <div class="site_img_box">
                         <img src="img/book.png" alt="book_site">
@@ -245,6 +253,19 @@
                 setTimeout(function () {
                     about_t.classList.add("about_slide");
                     about_c.classList.add("fade_in");
+
+                    dm_btn.classList.remove("white_dm");
+                    dm_btn.classList.add("black_dm");
+                    dm_img.setAttribute("src", "img/dm_icon_up.png");
+
+                    dm_btn.addEventListener("mouseover", () => {
+                        dm_img.setAttribute("src", "img/dm_icon.png");
+                    });
+
+                    dm_btn.addEventListener("mouseout", () => {
+                        dm_img.setAttribute("src", "img/dm_icon_up.png");
+                    });
+
                 }, 1200);
             }
         });
@@ -309,11 +330,11 @@
             }//홀수와 짝수를 구분 후 휠마다 각각 위치 값을 변환 active의 높이를 변경
 
             for (let i = 0; i < active_txt.length; i++) {
-                let active_txt_left = active_txt[i].offsetLeft/2 + win_wi;
-                if(move < active_txt_left *-1){
-                    active_txt[i].style.opacity=`1`;
-                }else{
-                    active_txt[i].style=``;
+                let active_txt_left = active_txt[i].offsetLeft / 2 + win_wi;
+                if (move < active_txt_left * -1) {
+                    active_txt[i].style.opacity = `1`;
+                } else {
+                    active_txt[i].style = ``;
                 }
             }
 
@@ -322,7 +343,76 @@
 
         //세로 스크롤 이벤트
 
+        const s_title = document.getElementsByClassName("site_title");
+            const s_title_arr = [];
+            let current = 0;
+
+            s_title[current].style.opacity = 1;
+            for (let j = 0; j < s_title.length; j++) {
+                splitLetters(s_title[j]);
+            }
+
+            function changeTitle() {
+                let cw =s_title_arr[current];
+                let nw = current == s_title.length - 1 ?s_title_arr[0] :s_title_arr[current + 1];
+                for (let j = 0; j < cw.length; j++) {
+                    animateLetterOut(cw, j);
+                }
+
+                for (let j = 0; j < nw.length; j++) {
+                    nw[j].className = `letter behind`;
+                    nw[0].parentElement.style.opacity = 1;
+                    animateLetterIn(nw, j);
+                }
+
+                current = (current ==s_title_arr.length - 1) ? 0 : current + 1;
+            }
+
+            function animateLetterOut(cw, j) {
+                setTimeout(function () {
+                    cw[j].className = 'letter out';
+                },j * 80);
+            }
+
+            function animateLetterIn(nw, j) {
+                setTimeout(function () {
+                    nw[j].className = 'letter in';
+                }, 340 + (j * 80));
+            }
+
+            function splitLetters(s_title) {
+                let content = s_title.innerHTML;
+                s_title.innerHTML = '';
+                let letters = [];
+                for (let j = 0; j < content.length; j++) {
+                    let letter = document.createElement('span');
+                    letter.className = 'letter';
+                    letter.innerHTML = content.charAt(j);
+                    s_title.appendChild(letter);
+                    letters.push(letter);
+                }
+
+               s_title_arr.push(letters);
+            }
+
+            // changeTitle();
+            setInterval(changeTitle, 4000);
+
+            // const site_li = document.querySelectorAll(".site_view li");
+            // const pj = document.getElementById("project");
+            // const pj_top = pj.offsetTop;
+
+
+            // if(win_top >= 3320){
+            //     changeTitle();
+            // }
+
+            //실험용
+//여기까지
+
+
         window.addEventListener("scroll", () => {
+
 
             const win_hi = window.innerHeight;
 
@@ -413,7 +503,6 @@
 
                     site_txt[i - 1].style.transform = `skew(0deg, 0deg)`;
                     site_txt[i - 1].style.marginTop = `0`;
-
                 } else {
                     site_img_li[i - 1].style = ``;
                     site_txt[i - 1].style = ``;
@@ -430,7 +519,8 @@
             }
         })
 
-
+//여기부터
+         
 
     </script>
 </body>
