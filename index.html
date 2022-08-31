@@ -352,6 +352,22 @@
                 splitLetters(s_title[j]);
             }
 
+            function splitLetters(s_title) {
+                let content = s_title.innerHTML;
+                s_title.innerHTML = '';
+                let letters = [];
+                for (let j = 0; j < content.length; j++) {
+                    let letter = document.createElement('span');
+                    letter.className = 'letter';
+                    letter.innerHTML = content.charAt(j);
+                    s_title.appendChild(letter);
+                    letters.push(letter);
+                }
+
+               s_title_arr.push(letters);
+            }
+
+
             function changeTitle() {
                 let cw =s_title_arr[current];
                 let nw = current == s_title.length - 1 ?s_title_arr[0] :s_title_arr[current + 1];
@@ -380,32 +396,19 @@
                 }, 340 + (j * 80));
             }
 
-            function splitLetters(s_title) {
-                let content = s_title.innerHTML;
-                s_title.innerHTML = '';
-                let letters = [];
-                for (let j = 0; j < content.length; j++) {
-                    let letter = document.createElement('span');
-                    letter.className = 'letter';
-                    letter.innerHTML = content.charAt(j);
-                    s_title.appendChild(letter);
-                    letters.push(letter);
-                }
-
-               s_title_arr.push(letters);
-            }
-
+            
+            // if(window.scrollY == 6300){
+            //     changeTitle();
+            // }
             // changeTitle();
-            setInterval(changeTitle, 4000);
+            setInterval(changeTitle, 2000);
 
             // const site_li = document.querySelectorAll(".site_view li");
             // const pj = document.getElementById("project");
             // const pj_top = pj.offsetTop;
 
 
-            // if(win_top >= 3320){
-            //     changeTitle();
-            // }
+
 
             //실험용
 //여기까지
