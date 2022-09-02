@@ -31,33 +31,46 @@
         <div id="skill_wrap">
             <ul class="skill">
                 <li class="about">
+                    <img src="img/arrow.png" alt="화살표" class="arrow">
                     <div class="about_title">
-                        <h3>언제나 꿈꾸고 싶은</h3>
-                        <h3>개발자 최명윤입니다.</h3>
+                        <h3>언제나 꿈꾸고 싶은 개발자 <span>최명윤입니다</span></h3>
+                        <!-- <h3>개발자 최명윤입니다.</h3> -->
                         <p> 2022 PORTFOLIO</p>
                     </div>
                     <div class="about_contents">
+                        <div class="pro">
+                            <div class="my_img"></div>
+                            <ul>
+                                <li>
+                                    <h4>Profile</h4>
+                                </li>
+                                <li>이름 : 최명윤 (Choi MyeongYun)</li>
+                                <li>나이 : 25 (1998.08.26)</li>
+                                <li>주소 : 경기도 안산시 단원구</li>
+                                <li>연락처 : 01023862257</li>
+                                <li>E-mail : chmy3514@naver.com</li>
+                            </ul>
+                        </div>
                         <h4>"프론트앤드 개발자를 꿈꾸는 저를 소개합니다"</h4>
-
                         <p>안녕하세요. 부족함과 미약함을 자양분으로 성장하는 최명윤입니다.</p>
                         <p>수많은 함수나 코드를 알아가고 외우는 것보다,</p>
                         <p>스스로의 부족함을 깨닫고 채우기 위해 공들였습니다.</p>
                         <p>언제나 배움의 자세를 멈추지 않고 발전하는 개발자가 제 꿈입니다.</p>
                         <p>보시기제 부족한 부분들은, 추후에 저의 자양분으로 만들어내겠습니다.</p>
-                        <!-- 
-                            <li><h4>Profile</h4></li>
-                            <li>이름 : 최명윤 (Choi MyeongYun)</li>
-                            <li>나이 : 25 (1998.08.26)</li>
-                            <li>주소 : 경기도 안산시 단원구</li>
-                            <li>연락처 : 01023862257</li>
-                            <li>E-mail : chmy3514@naver.com</li>
-                        </ul> -->
                     </div>
                 </li>
                 <li class="detail">
                     <div class="detail_overlay"></div>
                     <div class="active_title">
-                        <h2>제가 할 수 있는 기술들입니다</h2>
+                        <ul>
+                            <li>기초부터 차근차근 쌓아올린 기술들입니다.</li>
+                            <li>사용 할 줄 아는 기술들을 보다 조화롭게 활용할 수 있습니다.</li>
+                            <li>_</li>
+                            <li>보고 계신 지금도 다양한 기술을 습득하고</li>
+                            <li>깊이 있게 탐구하고 있습니다.</li>
+                        </ul>
+                        <h2>ACTIVE SKILL</h2>
+                        <p> *이미지를 호버해보세요!</p>
                     </div>
                     <ul class="skill_box">
                         <li>
@@ -207,6 +220,35 @@
 
     <script>
 
+
+        // let pos = {x:0,y:0};
+        // let redSpan;
+
+        // for(let li of s_li){
+        //     const liDiv = li.getElementsByTagName('DIV')[0];
+        //     liDiv.addEventListener('mouseenter',on_redSpan);
+        //     li.addEventListener('mouseleave',off_redSpan);
+        // }
+
+        // function on_redSpan(e){
+        //     e = e || window.event;
+        //     pos.x = e.offsetX;
+        //     pos.y = e.offsetY;
+        //     redSpan = this.nextElementSibling;
+        //     redSpan.style.transform = `
+        //         translate(${pos.x}px, ${pos.y}px) scale(100)
+        //     `;
+        // }
+
+        // function off_redSpan(e){
+        //     e = e || window.event;
+        //     pos.x = e.offsetX;
+        //     pos.y = e.offsetY;
+        //     redSpan.style.transform = `
+        //         translate(${pos.x}px, ${pos.y}px) scale(.1)
+        //     `;
+        // }
+
         const open_page = document.getElementById("open_page");
         const page_piece = document.querySelectorAll("#open_page div");
         const left_piece = document.querySelector(".left_page");
@@ -217,7 +259,8 @@
         const dm_img = document.querySelector(".dm_btn img");
 
         const about_t = document.querySelector(".about_title");
-        const about_c = document.querySelector(".about_contents")
+        const about_c = document.querySelector(".about_contents");
+        const arrow = document.querySelector(".arrow");
 
         dm_btn.addEventListener("mouseover", () => {
             dm_img.setAttribute("src", "img/dm_icon_up.png");
@@ -251,8 +294,10 @@
             function show_name() {
                 about_t.classList.add("fade_in");
                 setTimeout(function () {
+                    about_t.classList.remove("about_title");
                     about_t.classList.add("about_slide");
                     about_c.classList.add("fade_in");
+                    arrow.classList.add("fade_in");
 
                     dm_btn.classList.remove("white_dm");
                     dm_btn.classList.add("black_dm");
@@ -281,6 +326,7 @@
         const detail_overlay = document.querySelector(".detail_overlay");
         const active = document.querySelectorAll(".active");
         const active_txt = document.querySelectorAll(".active_txt h4");
+        const a_title = document.querySelector(".active_title");
         //가로스크롤 최대값
 
         let win_top = window.scrollY;
@@ -306,9 +352,12 @@
                 li_upDown(move);
             }//휠값마다 skill의 가로 값을 변화
 
+
             if (move < (win_wi / 2) * -1) {
                 detail.classList.add("fade_in");
                 detail_overlay.style.width = `100%`;
+                skill_wrap.style.background = `#000`;
+                a_title.style.color = `#ffffff`;
                 setTimeout(function () {
                     detail_overlay.style.left = `100%`;
                 }, 500);
@@ -316,7 +365,12 @@
                 detail.classList.remove("fade_in");
                 detail_overlay.style.width = `0`;
                 detail_overlay.style.left = `0`;
+                skill_wrap.style.background = `#ffffff`;
+                a_title.style.color = `#000`;
             }
+
+
+
 
             function li_upDown(move) {
                 li_pos = move;
@@ -333,8 +387,18 @@
                 let active_txt_left = active_txt[i].offsetLeft / 2 + win_wi;
                 if (move < active_txt_left * -1) {
                     active_txt[i].style.opacity = `1`;
+                    active_txt[i].style.transform = `translateX(-15rem)`;
                 } else {
                     active_txt[i].style = ``;
+                }
+
+
+                if (move < win_wi * 2 * -1) {
+                    skill_wrap.style.background = `#ffffff`;
+                    a_title.style.color = `#000`;
+                    active_txt[i].style.color = `#000`;
+                }else{
+                    active_txt[i].style.color = `#ffffff`;
                 }
             }
 
@@ -342,7 +406,6 @@
 
 
         //세로 스크롤 이벤트
-
 
 
         const s_title = document.getElementsByClassName("site_title");
@@ -418,8 +481,8 @@
             }, 340 + (j * 80));
         }
 
-        function up(aa, b){
-            aa[b+1].className = `letter out`;
+        function up(aa, b) {
+            aa[b + 1].className = `letter out`;
         }
 
 
@@ -501,8 +564,8 @@
                 //부모 요소 탑 값에 자식 요소 탑값을 더한 값
 
                 //s_title 변경 함수 호출
-                if (window.scrollY > li_top && window.scrollY < li_top+50) {
-                    current = i-1;
+                if (window.scrollY > li_top && window.scrollY < li_top + 50) {
+                    current = i - 1;
                     changeTitle();
                 }
 

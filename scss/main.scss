@@ -148,14 +148,14 @@ a {
     position: relative;
     overflow: hidden;
     transition: 0.5s ease all;
-    background-color: #f2f2f2;
+    background-color: #ffffff;
 
     .dm_btn {
         line-height: 3rem;
         font-size: 1.2rem;
         position: absolute;
-        bottom: 5%;
-        right: 5%;
+        bottom: 10%;
+        right: 10%;
         padding: 0.6rem 1.9rem;
         border-radius: 5rem;
         display: flex;
@@ -194,9 +194,10 @@ a {
 }
 
 .about_title {
-    font-size: 5rem;
+    font-size: 3rem;
     text-align: center;
-    line-height: 9rem;
+
+    line-height: 6rem;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -204,7 +205,6 @@ a {
     opacity: 0;
     transition: 0.5s ease-in-out all;
     letter-spacing: 0.3rem;
-
     p {
         color: #c4c4c4;
         font-size: 3rem;
@@ -214,23 +214,49 @@ a {
 
 .about_contents {
     position: absolute;
-    bottom: 1rem;
-    left: 30rem;
+    bottom: -15rem;
+    left: 20%;
     font-size: 1.25rem;
     line-height: 3rem;
     opacity: 0;
     transition: 1s ease-in-out all;
     transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 
     h4 {
         font-size: 2rem;
+        margin-top: 4rem;
         margin-bottom: 1.5rem;
     }
 }
 
+.pro{
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+
+    .my_img{
+        width: 15rem;
+        height: 20rem;
+        background-color: black;
+        margin-right: 3rem;
+
+    }
+}
+
+.arrow{
+    position: absolute;
+    bottom:50%;
+    right: 10%;
+    filter: invert(100%);
+    opacity: 0;
+}
+
 .detail {
     width: 175vw;
-    background: linear-gradient(to right, #f2f2f2, #e5e5e5, #ffffff);
+    // background: linear-gradient(to right, #f2f2f2, #e5e5e5, #ffffff);
     position: relative;
     opacity: 0;
     overflow: hidden;
@@ -243,7 +269,7 @@ a {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #000;
+    background-color: #c4c4c4;
     width: 0;
     height: 100%;
     transition: 0.5s all ease-in-out;
@@ -261,7 +287,6 @@ a {
         width: 17%;
         height: 100%;
         position: relative;
-
 
         &:nth-child(4) {
             margin-top: -27rem;
@@ -292,6 +317,14 @@ a {
 
     img {
         width: 60%;
+        filter: grayscale(100%);
+        transition: 0.5s all ease-in-out;
+        cursor: pointer;
+
+        &:hover{
+            filter: grayscale(0%);
+            transform: scale(1.2);
+        }
     }
 }
 
@@ -310,8 +343,26 @@ a {
     font-size: 2rem;
     width: 100%;
     position: absolute;
-    top: 50%;
+    bottom: 0%;
     transform: translateY(-50%);
+
+    h2{
+        font-size: 9rem;
+    }
+
+    p{
+        font-size: 1.5rem;
+        background-color: #c4c4c4;
+        display: inline-block;
+        color: #000;
+        padding: 0 0.5rem;
+    }
+
+    li{
+        line-height: 3rem;
+        font-weight: 300;
+        font-size: 1.5rem;
+    }
 }
 
 .active_txt {
@@ -326,6 +377,7 @@ a {
     left: 0;
     transform: translateY(-50%);
     font-size: 1.6rem;
+    color: #ffffff;
 
     h4 {
         opacity: 0;
@@ -334,7 +386,7 @@ a {
 }
 
 .plus {
-    background-color: #ffffff;
+    // background-color: #ffffff;
 }
 
 #project_wrap {
@@ -553,14 +605,37 @@ a {
 }
 
 .about_slide {
-    font-size: 3rem;
-    text-align: left;
-    line-height: 6rem;
-    position: absolute;
-    top: 20rem;
-    left: 27.5rem;
-    transition: 0.5s ease-in-out all;
-}
+        font-size: 1.5rem;
+        text-align: left;
+        line-height: 4.5rem;
+        position: absolute;
+        top: 10rem;
+        left:14.5%;
+        transition: 0.5s ease-in-out all;
+        transform: translateX(-50%);
+        font-family: $basic_font;
+
+        h3{
+            font-weight: 400;
+        }
+
+        span{
+            display: block;
+            font-size: 3.5rem;
+            font-weight: 600;
+            letter-spacing: 0.2rem;
+            margin-top: 1rem;
+        }
+
+        p {
+            color: #c4c4c4;
+            font-size: 1.5rem;
+            transition: 0.5s ease-in-out all;
+            margin-top: 1rem;
+        }
+    }
+    
+
 
 .fade_in {
     opacity: 1;
@@ -597,4 +672,8 @@ a {
 .in {
     transform: rotateX(0deg);
     transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.bg_black{
+    background-color: #000;
 }

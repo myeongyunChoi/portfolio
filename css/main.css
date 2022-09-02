@@ -153,15 +153,15 @@ a {
   overflow: hidden;
   -webkit-transition: 0.5s ease all;
   transition: 0.5s ease all;
-  background-color: #f2f2f2;
+  background-color: #ffffff;
 }
 
 #skill_wrap .dm_btn {
   line-height: 3rem;
   font-size: 1.2rem;
   position: absolute;
-  bottom: 5%;
-  right: 5%;
+  bottom: 10%;
+  right: 10%;
   padding: 0.6rem 1.9rem;
   border-radius: 5rem;
   display: -webkit-box;
@@ -206,9 +206,9 @@ a {
 }
 
 .about_title {
-  font-size: 5rem;
+  font-size: 3rem;
   text-align: center;
-  line-height: 9rem;
+  line-height: 6rem;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -229,8 +229,8 @@ a {
 
 .about_contents {
   position: absolute;
-  bottom: 1rem;
-  left: 30rem;
+  bottom: -15rem;
+  left: 20%;
   font-size: 1.25rem;
   line-height: 3rem;
   opacity: 0;
@@ -238,17 +238,52 @@ a {
   transition: 1s ease-in-out all;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .about_contents h4 {
   font-size: 2rem;
+  margin-top: 4rem;
   margin-bottom: 1.5rem;
+}
+
+.pro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-bottom: 3rem;
+}
+
+.pro .my_img {
+  width: 15rem;
+  height: 20rem;
+  background-color: black;
+  margin-right: 3rem;
+}
+
+.arrow {
+  position: absolute;
+  bottom: 50%;
+  right: 10%;
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+  opacity: 0;
 }
 
 .detail {
   width: 175vw;
-  background: -webkit-gradient(linear, left top, right top, from(#f2f2f2), color-stop(#e5e5e5), to(#ffffff));
-  background: linear-gradient(to right, #f2f2f2, #e5e5e5, #ffffff);
   position: relative;
   opacity: 0;
   overflow: hidden;
@@ -266,7 +301,7 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #000;
+  background-color: #c4c4c4;
   width: 0;
   height: 100%;
   -webkit-transition: 0.5s all ease-in-out;
@@ -324,6 +359,18 @@ a {
 
 .active img {
   width: 60%;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-transition: 0.5s all ease-in-out;
+  transition: 0.5s all ease-in-out;
+  cursor: pointer;
+}
+
+.active img:hover {
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .design {
@@ -345,9 +392,27 @@ a {
   font-size: 2rem;
   width: 100%;
   position: absolute;
-  top: 50%;
+  bottom: 0%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+}
+
+.active_title h2 {
+  font-size: 9rem;
+}
+
+.active_title p {
+  font-size: 1.5rem;
+  background-color: #c4c4c4;
+  display: inline-block;
+  color: #000;
+  padding: 0 0.5rem;
+}
+
+.active_title li {
+  line-height: 3rem;
+  font-weight: 300;
+  font-size: 1.5rem;
 }
 
 .active_txt {
@@ -367,16 +432,13 @@ a {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   font-size: 1.6rem;
+  color: #ffffff;
 }
 
 .active_txt h4 {
   opacity: 0;
   -webkit-transition: ease-in-out 1s all;
   transition: ease-in-out 1s all;
-}
-
-.plus {
-  background-color: #ffffff;
 }
 
 #project_wrap {
@@ -609,14 +671,37 @@ a {
 }
 
 .about_slide {
-  font-size: 3rem;
+  font-size: 1.5rem;
   text-align: left;
-  line-height: 6rem;
+  line-height: 4.5rem;
   position: absolute;
-  top: 20rem;
-  left: 27.5rem;
+  top: 10rem;
+  left: 14.5%;
   -webkit-transition: 0.5s ease-in-out all;
   transition: 0.5s ease-in-out all;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.about_slide h3 {
+  font-weight: 400;
+}
+
+.about_slide span {
+  display: block;
+  font-size: 3.5rem;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  margin-top: 1rem;
+}
+
+.about_slide p {
+  color: #c4c4c4;
+  font-size: 1.5rem;
+  -webkit-transition: 0.5s ease-in-out all;
+  transition: 0.5s ease-in-out all;
+  margin-top: 1rem;
 }
 
 .fade_in {
@@ -665,4 +750,8 @@ a {
   transition: -webkit-transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.bg_black {
+  background-color: #000;
 }
