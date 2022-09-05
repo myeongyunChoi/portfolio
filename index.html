@@ -8,6 +8,16 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="css/main.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MDBCGG8G2W"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-MDBCGG8G2W');
+    </script>
 </head>
 
 <body>
@@ -70,7 +80,7 @@
                             <li>깊이 있게 탐구하고 있습니다.</li>
                         </ul>
                         <h2>ACTIVE SKILL</h2>
-                        <p> *이미지를 호버해보세요!</p>
+                        <p> *이미지를 호버하면 숙련도가 표시됩니다!</p>
                     </div>
                     <ul class="skill_box">
                         <li>
@@ -80,6 +90,7 @@
                         <li>
                             <div class="active">
                                 <div class="chart">
+                                    <div class="chart_inner"></div>
                                     <img src="img/html.png" alt="html icon">
                                 </div>
                             </div>
@@ -221,18 +232,6 @@
     <script src="js/hover.js"></script>
 
     <script>
-
-        //원형차트 게이지 채우기#ee5050
-
-        // const chart = document.querySelector(".chart");
-
-        // chart.addEventListener("mouseover",(e) => {
-        //     chart.style.background = `conic-gradient(#ee5050 0% 80%, #dedede 80% 100%)`
-        // })
-
-        // chart.addEventListener("mouseout",(e) => {
-        //     chart.style.background = `conic-gradient(#dedede 0% 100%)`
-        // })
 
         const open_page = document.getElementById("open_page");
         const page_piece = document.querySelectorAll("#open_page div");
@@ -382,12 +381,30 @@
                     skill_wrap.style.background = `#ffffff`;
                     a_title.style.color = `#000`;
                     active_txt[i].style.color = `#000`;
-                }else{
+                } else {
                     active_txt[i].style.color = `#ffffff`;
                 }
             }
 
         });
+
+
+        const chart = document.querySelector(".chart");
+
+        chart.addEventListener("mouseenter", (e) => {
+            let percent = 80;
+            let i = 0
+            setInterval(function(){
+                if (i <= percent) {
+                    perc(i);
+                    i++;
+                }
+            },10);
+        })
+
+        function perc(i){
+            chart.style.background = `conic-gradient(#ee5050 0% ${i}%, #dedede ${i}% 100%)`
+        }
 
 
         //세로 스크롤 이벤트

@@ -328,6 +328,14 @@ a {
   position: relative;
 }
 
+.skill_box li:nth-child(3) img:nth-child(1) {
+  left: 0;
+}
+
+.skill_box li:nth-child(3) img:nth-child(2) {
+  left: 100%;
+}
+
 .skill_box li:nth-child(4) {
   margin-top: -27rem;
 }
@@ -336,20 +344,8 @@ a {
   margin-top: -33rem;
 }
 
-.css_icon {
-  width: 200%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.css_icon img {
-  height: 50%;
-  margin-right: 3rem;
-}
-
 .active {
-  width: 60%;
+  width: 50%;
   height: 100%;
   position: absolute;
   top: 10rem;
@@ -358,7 +354,8 @@ a {
 }
 
 .active img {
-  width: 60%;
+  height: 12.5rem;
+  width: 12.5rem;
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
   -webkit-transition: 0.5s all ease-in-out;
@@ -376,21 +373,42 @@ a {
           filter: grayscale(0%);
 }
 
+.css_icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+}
+
+.css_icon img {
+  margin-right: 3rem;
+}
+
 .chart {
   width: 100%;
   height: 100%;
-  background: conic-gradient(#dedede 0% 100%);
+  background: conic-gradient(#ee5050 0%, #dedede 0% 100%);
   border: 1px solid #ffffff;
   position: relative;
   top: 0;
   -webkit-clip-path: circle(40%);
           clip-path: circle(40%);
-  -webkit-transition: 0.5s all ease-in-out;
-  transition: 0.5s all ease-in-out;
+  -webkit-transition: 1s all ease-in-out;
+  transition: 1s all ease-in-out;
 }
 
-.chart:hover {
-  background: conic-gradient(#f75959 0% 80%, #dedede 80% 100%);
+.chart .chart_inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-clip-path: circle(40%);
+          clip-path: circle(40%);
+  width: 95%;
+  height: 95%;
+  background-color: #000;
 }
 
 .design {
