@@ -63,7 +63,7 @@ a {
 #open_page .hook {
   width: 5%;
   height: 100%;
-  background-color: rgba(14, 14, 14, 0.1);
+  background-color: #242424;
   -webkit-transition: 1s all ease-in-out;
   transition: 1s all ease-in-out;
   position: relative;
@@ -160,8 +160,8 @@ a {
   line-height: 3rem;
   font-size: 1.2rem;
   position: absolute;
-  bottom: 10%;
-  right: 10%;
+  bottom: 12%;
+  right: 15%;
   padding: 0.6rem 1.9rem;
   border-radius: 5rem;
   display: -webkit-box;
@@ -230,7 +230,7 @@ a {
 .about_contents {
   position: absolute;
   bottom: -15rem;
-  left: 20%;
+  left: 25%;
   font-size: 1.25rem;
   line-height: 3rem;
   opacity: 0;
@@ -276,7 +276,7 @@ a {
 .arrow {
   position: absolute;
   bottom: 50%;
-  right: 10%;
+  right: 15%;
   -webkit-filter: invert(100%);
           filter: invert(100%);
   opacity: 0;
@@ -328,20 +328,32 @@ a {
   position: relative;
 }
 
-.skill_box li:nth-child(3) img:nth-child(1) {
+.skill_box li:nth-child(3) .chart:nth-child(1) {
+  top: 0;
   left: 0;
+  width: 100%;
 }
 
-.skill_box li:nth-child(3) img:nth-child(2) {
-  left: 100%;
+.skill_box li:nth-child(3) .chart:nth-child(2) {
+  left: 120%;
+  width: 100%;
+  top: -90%;
 }
 
 .skill_box li:nth-child(4) {
   margin-top: -27rem;
 }
 
-.skill_box li:nth-child(6) {
-  margin-top: -33rem;
+.skill_box li:nth-child(6) .chart:nth-child(1) {
+  top: -70%;
+  left: -20%;
+  width: 100%;
+}
+
+.skill_box li:nth-child(6) .chart:nth-child(2) {
+  left: 100%;
+  width: 100%;
+  top: -150%;
 }
 
 .active {
@@ -368,34 +380,29 @@ a {
           transform: translate(-50%, -50%);
 }
 
-.active img:hover {
-  -webkit-filter: grayscale(0%);
-          filter: grayscale(0%);
-}
-
 .css_icon {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-flow: wrap;
-      flex-flow: wrap;
+  position: relative;
 }
 
 .css_icon img {
   margin-right: 3rem;
 }
 
+.design {
+  position: relative;
+}
+
+.design img {
+  margin-right: 3rem;
+}
+
 .chart {
   width: 100%;
   height: 100%;
-  background: conic-gradient(#ee5050 0%, #dedede 0% 100%);
-  border: 1px solid #ffffff;
   position: relative;
   top: 0;
   -webkit-clip-path: circle(40%);
           clip-path: circle(40%);
-  -webkit-transition: 1s all ease-in-out;
-  transition: 1s all ease-in-out;
 }
 
 .chart .chart_inner {
@@ -409,21 +416,8 @@ a {
   width: 95%;
   height: 95%;
   background-color: #000;
-}
-
-.design {
-  width: 60%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-}
-
-.design img {
-  width: 50%;
-  margin-right: 3rem;
+  -webkit-transition: ease 0.5s all;
+  transition: ease 0.5s all;
 }
 
 .active_title {
@@ -683,10 +677,37 @@ a {
   left: -17.5rem;
 }
 
-#mail {
+#contec {
   width: 100%;
   height: 100vh;
-  border: 1px solid black;
+  position: relative;
+}
+
+.contec_head {
+  margin-left: 8rem;
+  padding-top: 10rem;
+}
+
+.contec_head h2 {
+  font-size: 4.8rem;
+  font-weight: 400;
+  letter-spacing: -0.3rem;
+}
+
+.contec_inner {
+  margin: 30rem 0 0 8rem;
+  font-size: 1.75rem;
+  font-weight: 300;
+}
+
+.contec_inner h5 {
+  margin-bottom: 2.5rem;
+  font-size: 2.25rem;
+  font-weight: 400;
+}
+
+.contec_guide {
+  margin: 5rem 0 0 8rem;
 }
 
 .white_dm {
@@ -714,7 +735,7 @@ a {
   line-height: 4.5rem;
   position: absolute;
   top: 10rem;
-  left: 14.5%;
+  left: 19.5%;
   -webkit-transition: 0.5s ease-in-out all;
   transition: 0.5s ease-in-out all;
   -webkit-transform: translateX(-50%);
