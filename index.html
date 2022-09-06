@@ -18,6 +18,9 @@
 
         gtag('config', 'G-MDBCGG8G2W');
     </script>
+    <script defer src="js/width_scroll.js"></script>
+    <script defer src="js/main.js"></script>
+
 </head>
 
 <body>
@@ -147,9 +150,9 @@
                         <h4 class="active_line">디자인 작업도 가능합니다 :)</h4>
                     </div>
                 </li>
-                <li class="plus">
+                <!-- <li class="plus">
                     <h1>ㅁ먀먀ㅑㅁ먀ㅑㅁ먀ㅑ</h1>
-                </li>
+                </li> -->
             </ul>
             <a href="#" class="dm_btn white_dm"><img src="img/dm_icon.png" alt="dm_icon"> EASY <span> DM</span></a>
         </div>
@@ -203,7 +206,6 @@
                     <a href="#" class="site_more">Visit Site</a>
                     <ul class="site_explanation_box">
                         <li class="site_explanation fade_out">
-                            <p>사이트 설명</p>
                         </li>
                         <li class="site_explanation fade_out">
                             <p>
@@ -254,11 +256,15 @@
                         <p>Web Dev /</p>
                     </div>
                     <div class="site_img_box">
+                        <a href="https://myeongyunchoi.github.io/hotel/" class="site_overlay"></a>
+                        <a href="https://myeongyunchoi.github.io/hotel/" class="site_visit">Visit Site</a>
                         <img src="img/hotel.png" alt="hotel_site">
                     </div>
                 </li>
                 <li>
                     <div class="site_img_box">
+                        <a href="https://myeongyunchoi.github.io/flower/" class="site_overlay"></a>
+                        <a href="https://myeongyunchoi.github.io/flower/" class="site_visit">Visit Site</a>
                         <img src="img/flower.png" alt="flower_site">
                     </div>
                     <div class="site_txt">
@@ -277,11 +283,15 @@
                         <p>Open Api /</p>
                     </div>
                     <div class="site_img_box">
+                        <a href="https://myeongyunchoi.github.io/book/" class="site_overlay"></a>
+                        <a href="https://myeongyunchoi.github.io/book/" class="site_visit">Visit Site</a>
                         <img src="img/book.png" alt="book_site">
                     </div>
                 </li>
                 <li>
                     <div class="site_img_box">
+                        <a href="https://myeongyunchoi.github.io/project2/" class="site_overlay"></a>
+                        <a href="https://myeongyunchoi.github.io/project2/" class="site_visit">Visit Site</a>
                         <img src="img/space.png" alt="art_site">
                     </div>
                     <div class="site_txt">
@@ -298,6 +308,8 @@
                         <p>Web Dev /</p>
                     </div>
                     <div class="site_img_box">
+                        <a href="https://myeongyunchoi.github.io/project1/" class="site_overlay"></a>
+                        <a href="https://myeongyunchoi.github.io/project1/" class="site_visit">Visit Site</a>
                         <img src="img/guitar.png" alt="guitar_site">
                     </div>
                 </li>
@@ -326,463 +338,463 @@
 
     </div>
 
-    <script src="js/main.js"></script>
-    <script src="js/main_scroll.js"></script>
-    <script src="js/hover.js"></script>
-
     <script>
 
-        const open_page = document.getElementById("open_page");
-        const page_piece = document.querySelectorAll("#open_page div");
-        const left_piece = document.querySelector(".left_page");
-        const hook = document.querySelector(".hook");
-        const right_piece = document.querySelector(".right_page");
+        // const open_page = document.getElementById("open_page");
+        // const page_piece = document.querySelectorAll("#open_page div");
+        // const left_piece = document.querySelector(".left_page");
+        // const hook = document.querySelector(".hook");
+        // const right_piece = document.querySelector(".right_page");
 
-        const dm_btn = document.querySelector(".dm_btn");
-        const dm_img = document.querySelector(".dm_btn img");
+        // const dm_btn = document.querySelector(".dm_btn");
+        // const dm_img = document.querySelector(".dm_btn img");
 
-        const about_t = document.querySelector(".about_title");
-        const about_c = document.querySelector(".about_contents");
-        const arrow = document.querySelector(".arrow");
+        // const about_t = document.querySelector(".about_title");
+        // const about_c = document.querySelector(".about_contents");
+        // const arrow = document.querySelector(".arrow");
 
-        dm_btn.addEventListener("mouseover", () => {
-            dm_img.setAttribute("src", "img/dm_icon_up.png");
-        });
+        // dm_btn.addEventListener("mouseover", () => {
+        //     dm_img.setAttribute("src", "img/dm_icon_up.png");
+        // });
 
-        dm_btn.addEventListener("mouseout", () => {
-            dm_img.setAttribute("src", "img/dm_icon.png");
-        });
+        // dm_btn.addEventListener("mouseout", () => {
+        //     dm_img.setAttribute("src", "img/dm_icon.png");
+        // });
 
-        open_page.addEventListener("wheel", function openPage(e) {
+        // open_page.addEventListener("wheel", function openPage(e) {
 
-            if (win_top == 0) {
-                e.preventDefault();
-            }
+        //     if (win_top == 0) {
+        //         e.preventDefault();
+        //     }
 
-            if (e.deltaY > 0) {
-                hook.style.transform = `translateY(-100%)`;
+        //     if (e.deltaY > 0) {
+        //         hook.style.transform = `translateY(-100%)`;
 
-                setTimeout(function () {
-                    left_piece.style.transform = `translatex(-100%)`;
-                    right_piece.style.transform = `translatex(100%)`;
+        //         setTimeout(function () {
+        //             left_piece.style.transform = `translatex(-100%)`;
+        //             right_piece.style.transform = `translatex(100%)`;
 
-                    setTimeout(function () {
-                        open_page.style.display = `none`;
-                        show_name();
-                    }, 1000)
-                }, 1000)
-            }
+        //             setTimeout(function () {
+        //                 open_page.style.display = `none`;
+        //                 show_name();
+        //             }, 1000)
+        //         }, 1000)
+        //     }
 
-            //about_title 효과
-            function show_name() {
-                about_t.classList.add("fade_in");
-                setTimeout(function () {
-                    about_t.classList.remove("about_title");
-                    about_t.classList.add("about_slide");
-                    about_c.classList.add("fade_in");
-                    arrow.classList.add("fade_in");
+        //     //about_title 효과
+        //     function show_name() {
+        //         about_t.classList.add("fade_in");
+        //         setTimeout(function () {
+        //             about_t.classList.remove("about_title");
+        //             about_t.classList.add("about_slide");
+        //             about_c.classList.add("fade_in");
+        //             arrow.classList.add("fade_in");
 
-                    dm_btn.classList.remove("white_dm");
-                    dm_btn.classList.add("black_dm");
-                    dm_img.setAttribute("src", "img/dm_icon_up.png");
+        //             dm_btn.classList.remove("white_dm");
+        //             dm_btn.classList.add("black_dm");
+        //             dm_img.setAttribute("src", "img/dm_icon_up.png");
 
-                    dm_btn.addEventListener("mouseover", () => {
-                        dm_img.setAttribute("src", "img/dm_icon.png");
-                    });
+        //             dm_btn.addEventListener("mouseover", () => {
+        //                 dm_img.setAttribute("src", "img/dm_icon.png");
+        //             });
 
-                    dm_btn.addEventListener("mouseout", () => {
-                        dm_img.setAttribute("src", "img/dm_icon_up.png");
-                    });
+        //             dm_btn.addEventListener("mouseout", () => {
+        //                 dm_img.setAttribute("src", "img/dm_icon_up.png");
+        //             });
 
-                }, 1200);
-            }
-        });
-
-
-        const skill_wrap = document.getElementById("skill_wrap");
-        const skill_wrap_wid = skill_wrap.clientWidth;
-        const skill = document.querySelector(".skill");
-        const skill_wid = skill.clientWidth;
-        const max_mov = (skill_wid - skill_wrap_wid) * -1;
-        const win_wi = window.innerWidth;
-        const detail = document.querySelector(".detail");
-        const detail_overlay = document.querySelector(".detail_overlay");
-        const active = document.querySelectorAll(".active");
-        const active_txt = document.querySelectorAll(".active_txt h4");
-        const a_title = document.querySelector(".active_title");
-        //가로스크롤 최대값
-
-        let win_top = window.scrollY;
-        let move = 0;
-        let mi_mo = 0;
-        let li_pos = 0;
+        //         }, 1200);
+        //     }
+        // });
 
 
-        skill_wrap.addEventListener("wheel", (e) => {
+        // const skill_wrap = document.getElementById("skill_wrap");
+        // const skill_wrap_wid = skill_wrap.clientWidth;
+        // const skill = document.querySelector(".skill");
+        // const skill_wid = skill.clientWidth;
+        // const max_mov = (skill_wid - skill_wrap_wid) * -1;
+        // const win_wi = window.innerWidth;
+        // const detail = document.querySelector(".detail");
+        // const detail_overlay = document.querySelector(".detail_overlay");
+        // const active = document.querySelectorAll(".active");
+        // const active_txt = document.querySelectorAll(".active_txt h4");
+        // const a_title = document.querySelector(".active_title");
+        // //가로스크롤 최대값
 
-            if (move > max_mov) {
-                e.preventDefault();
-            }//가로 스크롤이 끝날 때까지 스크롤 기본 이벤트를 제한
-
-            if (window.scrollY <= 0) {
-                move -= e.deltaY;
-                if (move <= max_mov) {
-                    move = max_mov;
-                } else if (move >= 0) {
-                    move = 0
-                }
-                skill.style.transform = `translateX(${move}px)`;
-                li_upDown(move);
-            }//휠값마다 skill의 가로 값을 변화
-
-
-            if (move < (win_wi / 2) * -1) {
-                detail.classList.add("fade_in");
-                detail_overlay.style.width = `100%`;
-                skill_wrap.style.background = `#000`;
-                a_title.style.color = `#ffffff`;
-                setTimeout(function () {
-                    detail_overlay.style.left = `100%`;
-                }, 500);
-            } else {
-                detail.classList.remove("fade_in");
-                detail_overlay.style.width = `0`;
-                detail_overlay.style.left = `0`;
-                skill_wrap.style.background = `#ffffff`;
-                a_title.style.color = `#000`;
-            }
+        // let win_top = window.scrollY;
+        // let move = 0;
+        // let mi_mo = 0;
+        // let li_pos = 0;
 
 
+        // skill_wrap.addEventListener("wheel", (e) => {
+
+        //     if (move > max_mov) {
+        //         e.preventDefault();
+        //     }//가로 스크롤이 끝날 때까지 스크롤 기본 이벤트를 제한
+
+        //     if (window.scrollY <= 0) {
+        //         move -= e.deltaY;
+        //         if (move <= max_mov) {
+        //             move = max_mov;
+        //         } else if (move >= 0) {
+        //             move = 0
+        //         }
+        //         skill.style.transform = `translateX(${move}px)`;
+        //         li_upDown(move);
+        //     }//휠값마다 skill의 가로 값을 변화
 
 
-            function li_upDown(move) {
-                li_pos = move;
-                for (let i = 0; i < active.length; i++) {
-                    if (i % 2 != 0) {
-                        active[i].style.transform = `translateY(${li_pos / (i * 7)}px)`;
-                    } else {
-                        active[i].style.transform = `translateY(${-li_pos / (i * 7)}px)`;
-                    }
-                }
-            }//홀수와 짝수를 구분 후 휠마다 각각 위치 값을 변환 active의 높이를 변경
-
-            for (let i = 0; i < active_txt.length; i++) {
-                let active_txt_left = active_txt[i].offsetLeft / 2 + win_wi;
-                if (move < active_txt_left * -1) {
-                    active_txt[i].style.opacity = `1`;
-                    active_txt[i].style.transform = `translateX(-15rem)`;
-                } else {
-                    active_txt[i].style = ``;
-                }
-
-                const chart_in = document.querySelectorAll(".chart_inner");
-                for (let j = 0; j < chart_in.length; j++) {
-                    if (move < win_wi * 2 * -1) {
-                        skill_wrap.style.background = `#ffffff`;
-                        a_title.style.color = `#000`;
-                        active_txt[i].style.color = `#000`;
-                        chart_in[j].style.background = `#ffffff`;
-                    } else {
-                        active_txt[i].style.color = `#ffffff`;
-                        chart_in[j].style.background = `#000`;
-                    }
-                }
-            }
-
-        });
+        //     if (move < (win_wi / 2) * -1) {
+        //         detail.classList.add("fade_in");
+        //         detail_overlay.style.width = `100%`;
+        //         skill_wrap.style.background = `#000`;
+        //         a_title.style.color = `#ffffff`;
+        //         setTimeout(function () {
+        //             detail_overlay.style.left = `100%`;
+        //         }, 500);
+        //     } else {
+        //         detail.classList.remove("fade_in");
+        //         detail_overlay.style.width = `0`;
+        //         detail_overlay.style.left = `0`;
+        //         skill_wrap.style.background = `#ffffff`;
+        //         a_title.style.color = `#000`;
+        //     }
 
 
-        const chart = document.querySelectorAll(".chart");
-        const act_img = document.querySelectorAll(".active img");
 
-        for (let c = 0; c < chart.length; c++) {
-            chart[c].addEventListener("mouseenter", (e) => {
 
-                act_img[c].style.filter = `grayscale(0%)`;
-                let percent = 0;
+        //     function li_upDown(move) {
+        //         li_pos = move;
+        //         for (let i = 0; i < active.length; i++) {
+        //             if (i % 2 != 0) {
+        //                 active[i].style.transform = `translateY(${li_pos / (i * 7)}px)`;
+        //             } else {
+        //                 active[i].style.transform = `translateY(${-li_pos / (i * 7)}px)`;
+        //             }
+        //         }
+        //     }//홀수와 짝수를 구분 후 휠마다 각각 위치 값을 변환 active의 높이를 변경
 
-                if (c == 0) {
-                    percent = 95;
-                }
+        //     for (let i = 0; i < active_txt.length; i++) {
+        //         let active_txt_left = active_txt[i].offsetLeft / 2 + win_wi;
+        //         if (move < active_txt_left * -1) {
+        //             active_txt[i].style.opacity = `1`;
+        //             active_txt[i].style.transform = `translateX(-15rem)`;
+        //         } else {
+        //             active_txt[i].style = ``;
+        //         }
 
-                if (c == 1) {
-                    percent = 95;
-                }
+        //         const chart_in = document.querySelectorAll(".chart_inner");
+        //         for (let j = 0; j < chart_in.length; j++) {
+        //             if (move < win_wi * 2 * -1) {
+        //                 skill_wrap.style.background = `#ffffff`;
+        //                 a_title.style.color = `#000`;
+        //                 active_txt[i].style.color = `#000`;
+        //                 chart_in[j].style.background = `#ffffff`;
+        //             } else {
+        //                 active_txt[i].style.color = `#ffffff`;
+        //                 chart_in[j].style.background = `#000`;
+        //             }
+        //         }
+        //     }
 
-                if (c == 2) {
-                    percent = 90;
-                }
+        // });
 
-                if (c == 3) {
-                    percent = 80;
-                }
 
-                if (c == 4) {
-                    percent = 80;
-                }
+        // const chart = document.querySelectorAll(".chart");
+        // const act_img = document.querySelectorAll(".active img");
 
-                if (c == 5) {
-                    percent = 70;
-                }
+        // for (let c = 0; c < chart.length; c++) {
+        //     chart[c].addEventListener("mouseenter", (e) => {
 
-                if (c == 6) {
-                    percent = 70;
-                }
+        //         act_img[c].style.filter = `grayscale(0%)`;
+        //         let percent = 0;
 
-                if (c == 7) {
-                    percent = 70;
-                }
+        //         if (c == 0) {
+        //             percent = 95;
+        //         }
 
-                let i = 0;
-                setInterval(function () {
-                    if (i <= percent) {
-                        perc(i);
-                        i++;
-                    }
-                }, 10);
-            })
+        //         if (c == 1) {
+        //             percent = 95;
+        //         }
 
-            function perc(i) {
-                if (c === 0) {
-                    chart[c].style.background = `conic-gradient(#ee5050 0% ${i}%, #dedede ${i}% 100%)`;
-                }
-                if (c === 1) {
-                    chart[c].style.background = `conic-gradient(rgb(19, 38, 186) 0% ${i}%, #dedede ${i}% 100%)`;
-                }
-                if (c === 2) {
-                    chart[c].style.background = `conic-gradient(rgb(186, 19, 153) 0% ${i}%, #dedede ${i}% 100%)`;
-                }
-                if (c === 3) {
-                    chart[c].style.background = `conic-gradient(rgb(255, 243, 80) 0% ${i}%, #dedede ${i}% 100%)`;
-                }
-                if (c === 4) {
-                    chart[c].style.background = `conic-gradient(rgb(6, 2, 84) 0% ${i}%, #dedede ${i}% 100%)`;
-                }
-                if (c === 5) {
-                    chart[c].style.background = `conic-gradient(rgb(90, 253, 90) 0% ${i}%, #dedede ${i}% 100%)`;
-                }
-                if (c === 6) {
-                    chart[c].style.background = `conic-gradient(rgb(56, 148, 247) 0% ${i}%, #dedede ${i}% 100%)`;
-                }
-                if (c === 7) {
-                    chart[c].style.background = `conic-gradient(rgb(65, 4, 4) 0% ${i}%, #dedede ${i}% 100%)`;
-                }
-            }
-        }
+        //         if (c == 2) {
+        //             percent = 90;
+        //         }
+
+        //         if (c == 3) {
+        //             percent = 80;
+        //         }
+
+        //         if (c == 4) {
+        //             percent = 80;
+        //         }
+
+        //         if (c == 5) {
+        //             percent = 70;
+        //         }
+
+        //         if (c == 6) {
+        //             percent = 70;
+        //         }
+
+        //         if (c == 7) {
+        //             percent = 70;
+        //         }
+
+        //         let i = 0;
+        //         setInterval(function () {
+        //             if (i <= percent) {
+        //                 perc(i);
+        //                 i++;
+        //             }
+        //         }, 10);
+        //     })
+
+        //     function perc(i) {
+        //         if (c === 0) {
+        //             chart[c].style.background = `conic-gradient(#ee5050 0% ${i}%, #dedede ${i}% 100%)`;
+        //         }
+        //         if (c === 1) {
+        //             chart[c].style.background = `conic-gradient(rgb(19, 38, 186) 0% ${i}%, #dedede ${i}% 100%)`;
+        //         }
+        //         if (c === 2) {
+        //             chart[c].style.background = `conic-gradient(rgb(186, 19, 153) 0% ${i}%, #dedede ${i}% 100%)`;
+        //         }
+        //         if (c === 3) {
+        //             chart[c].style.background = `conic-gradient(rgb(255, 243, 80) 0% ${i}%, #dedede ${i}% 100%)`;
+        //         }
+        //         if (c === 4) {
+        //             chart[c].style.background = `conic-gradient(rgb(6, 2, 84) 0% ${i}%, #dedede ${i}% 100%)`;
+        //         }
+        //         if (c === 5) {
+        //             chart[c].style.background = `conic-gradient(rgb(90, 253, 90) 0% ${i}%, #dedede ${i}% 100%)`;
+        //         }
+        //         if (c === 6) {
+        //             chart[c].style.background = `conic-gradient(rgb(56, 148, 247) 0% ${i}%, #dedede ${i}% 100%)`;
+        //         }
+        //         if (c === 7) {
+        //             chart[c].style.background = `conic-gradient(rgb(65, 4, 4) 0% ${i}%, #dedede ${i}% 100%)`;
+        //         }
+        //     }
+        // }
 
 
 
         //세로 스크롤 이벤트
 
 
-        const s_title = document.getElementsByClassName("site_title");
-        const s_title_arr = [];
-        let current = 0;
+        // const s_title = document.getElementsByClassName("site_title");
+        // const s_title_arr = [];
+        // let current = 0;
 
-        s_title[current].style.opacity = 1;
-        for (let j = 0; j < s_title.length; j++) {
-            splitLetters(s_title[j]);
-        }
+        // s_title[current].style.opacity = 1;
+        // for (let j = 0; j < s_title.length; j++) {
+        //     splitLetters(s_title[j]);
+        // }
 
-        function splitLetters(s_title) {
-            let content = s_title.innerHTML;
-            s_title.innerHTML = '';
-            let letters = [];
-            //s_site를 비워내고 빈 배열 준비
-            for (let j = 0; j < content.length; j++) {
-                let letter = document.createElement('span');
-                letter.className = 'letter';
-                letter.innerHTML = content.charAt(j);
-                s_title.appendChild(letter);
-                letters.push(letter);
-            }
-            //s_site의 문장을 글자로 나눈 후 class를 할당, 비어있던 배열에 담음
-            s_title_arr.push(letters);
-            //글자를 모아서 상위 배열에 담음
-        }
+        // function splitLetters(s_title) {
+        //     let content = s_title.innerHTML;
+        //     s_title.innerHTML = '';
+        //     let letters = [];
+        //     //s_site를 비워내고 빈 배열 준비
+        //     for (let j = 0; j < content.length; j++) {
+        //         let letter = document.createElement('span');
+        //         letter.className = 'letter';
+        //         letter.innerHTML = content.charAt(j);
+        //         s_title.appendChild(letter);
+        //         letters.push(letter);
+        //     }
+        //     //s_site의 문장을 글자로 나눈 후 class를 할당, 비어있던 배열에 담음
+        //     s_title_arr.push(letters);
+        //     //글자를 모아서 상위 배열에 담음
+        // }
 
-        function changeTitle() {
-            let cw = s_title_arr[current];
-            let nw = current == s_title.length - 1 ? s_title_arr[0] : s_title_arr[current + 1];
-            let bw = s_title_arr[current];
-            // current 가 s_title.length보다 같으면 a:b
+        // function changeTitle() {
+        //     let cw = s_title_arr[current];
+        //     let nw = current == s_title.length - 1 ? s_title_arr[0] : s_title_arr[current + 1];
+        //     let bw = s_title_arr[current];
+        //     // current 가 s_title.length보다 같으면 a:b
 
-            for (let j = 0; j < cw.length; j++) {
-                animateLetterOut(cw, j);
-            }
+        //     for (let j = 0; j < cw.length; j++) {
+        //         animateLetterOut(cw, j);
+        //     }
 
-            // for (let k = 1; k < bw.length+1; k++) {
-            //     upAnimateLetterOut(bw, k);
-            // }
+        //     // for (let k = 1; k < bw.length+1; k++) {
+        //     //     upAnimateLetterOut(bw, k);
+        //     // }
 
-            for (let j = 0; j < nw.length; j++) {
-                nw[j].className = `letter behind`;
-                nw[0].parentElement.style.opacity = 1;
-                animateLetterIn(nw, j);
-            }
+        //     for (let j = 0; j < nw.length; j++) {
+        //         nw[j].className = `letter behind`;
+        //         nw[0].parentElement.style.opacity = 1;
+        //         animateLetterIn(nw, j);
+        //     }
 
-            // for (let j = 0; j <bw.length; j++){
-            //     backAnimateLetterOut(bw, j);
-            // }
+        //     // for (let j = 0; j <bw.length; j++){
+        //     //     backAnimateLetterOut(bw, j);
+        //     // }
 
-            current = (current == s_title_arr.length - 1) ? 0 : current + 1;
-        }
+        //     current = (current == s_title_arr.length - 1) ? 0 : current + 1;
+        // }
 
-        function animateLetterOut(cw, j) {
-            setTimeout(function () {
-                cw[j].className = 'letter out';
-            }, j * 80);
-        }
-
-        // function upAnimateLetterOut(bw, k) {
+        // function animateLetterOut(cw, j) {
         //     setTimeout(function () {
-        //         bw[k].className = 'letter out';
-        //     }, k * 80);
+        //         cw[j].className = 'letter out';
+        //     }, j * 80);
         // }
 
-        function animateLetterIn(nw, j) {
-            setTimeout(function () {
-                nw[j].className = 'letter in';
+        // // function upAnimateLetterOut(bw, k) {
+        // //     setTimeout(function () {
+        // //         bw[k].className = 'letter out';
+        // //     }, k * 80);
+        // // }
 
-                // up(nw, j);
-            }, 340 + (j * 80));
-        }
+        // function animateLetterIn(nw, j) {
+        //     setTimeout(function () {
+        //         nw[j].className = 'letter in';
 
-        // function up(aa, b) {
-        //     aa[b + 1].className = `letter out`;
+        //         // up(nw, j);
+        //     }, 340 + (j * 80));
         // }
 
-
-
-        //스크롤 올릴 때 진행되는 함수
-
-
-
-
-        window.addEventListener("scroll", (e) => {
-
-            const win_hi = window.innerHeight;
-
-            const img_over = document.querySelector(".img_overlay");
-            const img_box = document.querySelector(".imgbox");
-            const middle_li = document.querySelector(".middle_line");
-            const pj = document.getElementById("project");
-            const pj_top = pj.offsetTop;
-
-            let win_top = window.scrollY;
-            let zoom_val = win_top - (win_hi + 200);
-            let amount = 0;
-
-            if (win_top >= win_hi) {
-                img_over.style.background = "white";
-                if (win_top >= win_hi + 200) {
-                    zoom();
-                }
-            } else {
-                img_over.style = "";
-            }
-
-            function zoom() {
-                amount = 1 + zoom_val * 0.003;
-                opa = 1 - zoom_val * 0.001;
-                line = zoom_val * 0.037;
-
-                img_box.style.transform = `scale(${amount},${amount})`;
-                img_box.style.opacity = `${opa}`;
-
-                if (opa <= 0) {
-                    img_box.style = ``;
-                    img_box.style.display = `none`;
-                    middle_li.style.opacity = `1`;
-                    if (line >= 95) {
-                        line = 95;
-                    } else if (line <= 5) {
-                        line = 5;
-                    }
-                    middle_li.style.width = `${line}%`
-                } else {
-                    img_box.style.display = `block`;
-                    middle_li.style.opacity = `0`;
-                }
-
-            }
-
-            //프로젝트
-
-            if (win_top >= pj_top) {
-                pj.style.opacity = `1`;
-            } else {
-                pj.style = ``;
-            }
-
-
-            const site_li = document.querySelectorAll(".site_view li");
-            const site_img_li = document.querySelectorAll(".site_img_box");
-            const site_img = document.querySelectorAll(".site_img_box img");
-            const site_txt = document.querySelectorAll(".site_txt");
-            const site_na = document.querySelectorAll(".site_name");
-            const site_ex = document.querySelectorAll(".site_explanation");
-
-
-            let img_zoom = 0;
-            let num = 0;
-
-
-  
-            const siteNameOut = i => {
-                for (let j = 0; j < site_na.length; j++) {
-                    site_na[j].classList.add("fade_out");
-                    site_ex[j].classList.add("fade_out");
-                }
-                site_na[i].classList.remove("fade_out");
-                site_ex[i].classList.remove("fade_out");
-            }
-
-
-            for (let i = 1; i < site_li.length; i++) {
-
-                let li_top = site_li[i].offsetTop + pj_top - (win_hi * 0.38);
-                //부모 요소 탑 값에 자식 요소 탑값을 더한 값
-
-                //s_title 변경 함수 호출
-                if (window.scrollY > li_top && window.scrollY < li_top + 50) {
-                    current = i - 1;
-                    changeTitle();
-                }
-
-                if (win_top >= li_top - win_hi) {
-                    img_zoom = li_top / (win_top - 500);
-                    site_img[i - 1].style.transform = `rotate3d(1, 0, -1, 33deg) scale(${img_zoom})`;
-                }
-
-                if (win_top >= li_top) {
-                    site_img_li[i - 1].style.transform = `skew(0deg, 0deg)`;
-                    site_img_li[i - 1].style.marginTop = `0`;
-                    middle_li.style.width = `42%`;
-
-                    site_txt[i - 1].style.transform = `skew(0deg, 0deg)`;
-                    site_txt[i - 1].style.marginTop = `0`;
-
-                    siteNameOut(i);
-                    //site_na 변경 함수 호출
-                } else {
-                    site_img_li[i - 1].style = ``;
-                    site_txt[i - 1].style = ``;
-                }
-            }
-
-            const contec = document.querySelector("#contec");
-            const contec_top = contec.offsetTop;
-
-            if (win_top > contec_top - win_hi) {
-                middle_li.style.display = `none`;
-            } else {
-                middle_li.style.display = `block`;
-            }
-        })
+        // // function up(aa, b) {
+        // //     aa[b + 1].className = `letter out`;
+        // // }
 
 
 
+        // //스크롤 올릴 때 진행되는 함수
+
+
+
+
+        // window.addEventListener("scroll", (e) => {
+
+        //     const win_hi = window.innerHeight;
+
+        //     const img_over = document.querySelector(".img_overlay");
+        //     const img_box = document.querySelector(".imgbox");
+        //     const middle_li = document.querySelector(".middle_line");
+        //     const pj = document.getElementById("project");
+        //     const pj_top = pj.offsetTop;
+
+        //     let win_top = window.scrollY;
+        //     let zoom_val = win_top - (win_hi + 200);
+        //     let amount = 0;
+
+        //     if (win_top >= win_hi) {
+        //         img_over.style.background = "white";
+        //         if (win_top >= win_hi + 200) {
+        //             zoom();
+        //         }
+        //     } else {
+        //         img_over.style = "";
+        //     }
+
+        //     function zoom() {
+        //         amount = 1 + zoom_val * 0.003;
+        //         opa = 1 - zoom_val * 0.001;
+        //         line = zoom_val * 0.037;
+
+        //         img_box.style.transform = `scale(${amount},${amount})`;
+        //         img_box.style.opacity = `${opa}`;
+
+        //         if (opa <= 0) {
+        //             img_box.style = ``;
+        //             img_box.style.display = `none`;
+        //             middle_li.style.opacity = `1`;
+        //             if (line >= 95) {
+        //                 line = 95;
+        //             } else if (line <= 5) {
+        //                 line = 5;
+        //             }
+        //             middle_li.style.width = `${line}%`
+        //         } else {
+        //             img_box.style.display = `block`;
+        //             middle_li.style.opacity = `0`;
+        //         }
+
+        //     }
+
+        //     //프로젝트
+
+        //     if (win_top >= pj_top) {
+        //         pj.style.opacity = `1`;
+        //     } else {
+        //         pj.style = ``;
+        //     }
+
+
+        //     const site_li = document.querySelectorAll(".site_view li");
+        //     const site_img_li = document.querySelectorAll(".site_img_box");
+        //     const site_img = document.querySelectorAll(".site_img_box img");
+        //     const site_txt = document.querySelectorAll(".site_txt");
+        //     const site_na = document.querySelectorAll(".site_name");
+        //     const site_ex = document.querySelectorAll(".site_explanation");
+
+
+        //     let img_zoom = 0;
+        //     let num = 0;
+
+
+
+        //     const siteNameOut = i => {
+        //         for (let j = 0; j < site_na.length; j++) {
+        //             site_na[j].classList.add("fade_out");
+        //             site_ex[j].classList.add("fade_out");
+        //         }
+        //         site_na[i].classList.remove("fade_out");
+        //         site_ex[i].classList.remove("fade_out");
+        //     }
+
+        //     //siteli_img가 site_li보다 하나 더 적음 1부터 for문을 시작함
+        //     for (let i = 1; i < site_li.length; i++) {
+
+        //         let li_first_top = site_li[1].offsetTop + pj_top - (win_hi * 0.38);
+        //         let li_top = site_li[i].offsetTop + pj_top - (win_hi * 0.38);
+        //         //부모 요소 탑 값에 자식 요소 탑값을 더한 값
+
+        //         //s_title 변경 함수 호출
+        //         if (window.scrollY > li_top && window.scrollY < li_top + 50) {
+        //             current = i - 1;
+        //             changeTitle();
+        //         }
+
+        //         if (win_top < li_first_top){
+        //             site_na[0].classList.remove("fade_out");
+        //             site_na[1].classList.add("fade_out");
+        //             site_ex[1].classList.add("fade_out");
+        //         }
+
+        //         if (win_top >= li_top - win_hi) {
+        //             img_zoom = li_top / (win_top - 500);
+        //             site_img[i - 1].style.transform = `rotate3d(1, 0, -1, 33deg) scale(${img_zoom})`;
+        //         }
+
+        //         if (win_top >= li_top) {
+        //             site_img_li[i - 1].style.transform = `skew(0deg, 0deg)`;
+        //             site_img_li[i - 1].style.marginTop = `0`;
+        //             middle_li.style.width = `42%`;
+
+        //             site_txt[i - 1].style.transform = `skew(0deg, 0deg)`;
+        //             site_txt[i - 1].style.marginTop = `0`;
+
+        //             siteNameOut(i);
+        //             //site_na 변경 함수 호출
+        //         } else {
+        //             site_img_li[i - 1].style = ``;
+        //             site_txt[i - 1].style = ``;
+        //         }
+        //     }
+
+        //     const contec = document.querySelector("#contec");
+        //     const contec_top = contec.offsetTop;
+
+        //     if (win_top > contec_top - win_hi) {
+        //         middle_li.style.display = `none`;
+        //     } else {
+        //         middle_li.style.display = `block`;
+        //     }
+        // })
     </script>
 </body>
 
