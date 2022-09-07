@@ -26,54 +26,45 @@ function splitLetters(s_title) {
 
 function changeTitle() {
 
-    // window.addEventListener("wheel", e => {
-    //     if(e.deltaY > 0){
+    let cw = s_title_arr[current];
+    let nw = current == s_title.length - 1 ? s_title_arr[0] : s_title_arr[current + 1];
+    let bw = current == s_title.length - 2 ? s_title_arr[0] : s_title_arr[current + 2];
+    // current 가 s_title.length와 같으면 a 아니면 b
 
-            let cw = s_title_arr[current];
-            let nw = current == s_title.length -1 ? s_title_arr[0] : s_title_arr[current + 1];
-            let bw = s_title_arr[current + 2];
-            // current 가 s_title.length보다 같으면 a:b
+    for (let j = 0; j < cw.length; j++) {
+        animateLetterOut(cw, j);
+    }
 
-            for (let j = 0; j < cw.length; j++) {
-                animateLetterOut(cw, j);
-            }
+    for (let j = 0; j < bw.length; j++) {
+        animateLetterUpOut(bw, j);
+    }
 
-            for (let j = 0; j <= bw.length ; j++) {
-                // if(bw == s_title.length){
-                //     bw = s_title_arr[0];
-                    animateLetterUpOut(bw, j);
-                // }
-            }
+    for (let j = 0; j < nw.length; j++) {
+        nw[j].className = `letter behind`;
+        nw[0].parentElement.style.opacity = 1;
+        animateLetterIn(nw, j);
+    }
 
-            for (let j = 0; j < nw.length; j++) {
-                nw[j].className = `letter behind`;
-                nw[0].parentElement.style.opacity = 1;
-                animateLetterIn(nw, j);
-            }
-
-            current = (current == s_title_arr.length - 1) ? 0 : current + 1;
-    //     }
-    // });
+    current = (current == s_title_arr.length - 1) ? 0 : current + 1;
 }
 
 function animateLetterOut(cw, j) {
     setTimeout(function () {
         cw[j].className = 'letter out';
-    }, j * 80);
-}
-
-function animateLetterUpOut(bw, j) {
-    setTimeout(function () {
-        bw[j].className = 'letter out';
-    }, j * 80);
+    }, j * 50);
 }
 
 
 function animateLetterIn(nw, j) {
     setTimeout(function () {
         nw[j].className = 'letter in';
-        // up(nw, j);
-    }, 340 + (j * 80));
+    }, 340 + (j * 50));
+}
+
+function animateLetterUpOut(bw, j) {
+    setTimeout(function () {
+        bw[j].className = 'letter out';
+    }, j * 50);
 }
 
 
@@ -133,8 +124,8 @@ window.addEventListener("scroll", (e) => {
         pj.style = ``;
     }
 
-
     const site_li = document.querySelectorAll(".site_view li");
+    const ss = site_li[0].clientHeight;
     const site_img_li = document.querySelectorAll(".site_img_box");
     const site_img = document.querySelectorAll(".site_img_box img");
     const site_txt = document.querySelectorAll(".site_txt");
@@ -153,6 +144,7 @@ window.addEventListener("scroll", (e) => {
     let img_zoom = 0;
     let num = 0;
 
+
     const siteNameOut = i => {
         for (let j = 0; j < site_na.length; j++) {
             site_na[j].classList.add("fade_out");
@@ -162,6 +154,7 @@ window.addEventListener("scroll", (e) => {
         site_ex[i].classList.remove("fade_out");
     }
 
+
     //siteli_img가 site_li보다 하나 더 적음 1부터 for문을 시작함
     for (let i = 1; i < site_li.length; i++) {
 
@@ -170,9 +163,11 @@ window.addEventListener("scroll", (e) => {
         //부모 요소 탑 값에 자식 요소 탑값을 더한 값
 
         //s_title 변경 함수 호출
+
         if (window.scrollY > li_top && window.scrollY < li_top + 50) {
             current = i - 1;
             changeTitle();
+            siteNameOut(i);
         }
 
         if (win_top < li_first_top) {
@@ -194,10 +189,8 @@ window.addEventListener("scroll", (e) => {
             site_txt[i - 1].style.transform = `skew(0deg, 0deg)`;
             site_txt[i - 1].style.marginTop = `0`;
 
-            site_more.setAttribute("href", site_link[i-1]);
+            site_more.setAttribute("href", site_link[i - 1]);
 
-            siteNameOut(i);
-            //site_na 변경 함수 호출
         } else {
             site_img_li[i - 1].style = ``;
             site_txt[i - 1].style = ``;
