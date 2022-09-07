@@ -218,8 +218,8 @@ a {
 
 .about_contents {
     position: absolute;
-    bottom: -20rem;
-    left: 25%;
+    bottom: -15rem;
+    left: 30rem;
     font-size: 1.25rem;
     line-height: 3rem;
     opacity: 0;
@@ -229,7 +229,7 @@ a {
     flex-direction: column;
     justify-content: space-evenly;
 
-    h4 {
+    &>h4 {
         font-size: 2rem;
         margin-top: 4rem;
         margin-bottom: 1.5rem;
@@ -239,14 +239,26 @@ a {
 .pro{
     display: flex;
     align-items: flex-end;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
+    height: 20rem;
 
     .my_img{
         width: 15rem;
         height: 20rem;
         background-color: black;
         margin-right: 3rem;
+    }
+    
+    ul{
+        display: flex;
+        height: 20rem;
+        flex-direction: column;
+        justify-content: flex-start;
 
+        h4{
+            font-size: 2.5rem;
+            height: 5.5rem;
+        }
     }
 }
 
@@ -680,11 +692,14 @@ a {
 #contec {
     width: 100%;
     height: 100vh;
-    // position: relative;
     display: flex;
     flex-direction: column;
     padding: 10rem 8rem;
     justify-content: space-between;
+
+    ul{
+        transition: 1s all ease-in-out;
+    }
 }
 
 .contec_head{
@@ -693,6 +708,7 @@ a {
         font-size: 3.8rem;
         font-weight: 400;
         letter-spacing: -0.3rem;
+        z-index: 5;
     }
 }
 
@@ -732,35 +748,35 @@ a {
 // }
 
 .about_slide {
-        font-size: 1.5rem;
-        text-align: left;
-        line-height: 4.5rem;
-        position: absolute;
-        top: 10rem;
-        left:19.5%;
-        transition: 0.5s ease-in-out all;
-        transform: translateX(-50%);
-        font-family: $basic_font;
+    font-size: 1.5rem;
+    text-align: left;
+    line-height: 4.5rem;
+    position: absolute;
+    top: 10rem;
+    left: 21rem;
+    transition: 0.5s ease-in-out all;
+    transform: translateX(-50%);
+    font-family: $basic_font;
 
-        h3{
-            font-weight: 400;
-        }
-
-        span{
-            display: block;
-            font-size: 3.5rem;
-            font-weight: 600;
-            letter-spacing: 0.2rem;
-            margin-top: 1rem;
-        }
-
-        p {
-            color: #c4c4c4;
-            font-size: 1.5rem;
-            transition: 0.5s ease-in-out all;
-            margin-top: 1rem;
-        }
+    h3{
+        font-weight: 400;
     }
+
+    span{
+        display: block;
+        font-size: 3.5rem;
+        font-weight: 600;
+        letter-spacing: 0.2rem;
+        margin-top: 1rem;
+    }
+
+    p {
+        color: #c4c4c4;
+        font-size: 1.5rem;
+        transition: 0.5s ease-in-out all;
+        margin-top: 1rem;
+    }
+}
     
 
 
@@ -803,4 +819,9 @@ a {
 
 .bg_black{
     background-color: #000;
+}
+
+.slide_down{
+    transform: translateY(10rem);
+    opacity: 0;
 }

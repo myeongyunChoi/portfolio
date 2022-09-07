@@ -216,8 +216,21 @@ window.addEventListener("scroll", (e) => {
     const contec_top = contec.offsetTop;
 
     if (win_top > contec_top - win_hi) {
-        middle_li.style.display = `none`;
-    } else {
-        middle_li.style.display = `block`;
+        middle_li.style.width = `1%`;
+    }
+
+    const contec_ul = document.querySelectorAll("#contec ul");
+    // console.log(contec_ul);
+
+    for(let i = 0; i < contec_ul.length; i++){
+
+        const con_ul_top = contec_ul[i].offsetTop - (win_hi*0.9);
+
+        if (win_top >= con_ul_top){
+            contec_ul[i].classList.remove(`slide_down`);
+            middle_li.style.width = `${i*33}%`;
+        }else{
+            contec_ul[i].classList.add(`slide_down`);
+        }
     }
 })
