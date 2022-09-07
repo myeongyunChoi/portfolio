@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;600;700;800&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap');
 
 * {
     margin: 0;
@@ -113,19 +114,22 @@ a {
     background-color: #000;
     transition: 1s all ease-in-out;
     position: relative;
-    font-family: 'Archivo', 'NanumSquareRound', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.7rem;
 
     .left_txt {
         position: absolute;
         top: 50%;
-        left: 7rem;
+        left: 15rem;
         color: #ffffff;
         transform: translateY(-50%);
 
         h1 {
             font-size: 10rem;
-            font-weight: bold;
+            font-weight: 50;
             margin-bottom: 5rem;
+            font-weight: 600;
+            letter-spacing: 0.5rem;
         }
 
         h3 {
@@ -137,6 +141,7 @@ a {
             font-size: 3rem;
             margin-top: 3rem;
             font-weight: 200;
+            letter-spacing: 0.3rem;
         }
     }
 }
@@ -150,28 +155,28 @@ a {
     transition: 0.5s ease all;
     background-color: #ffffff;
 
-    .dm_btn {
-        line-height: 3rem;
-        font-size: 1.2rem;
-        position: absolute;
-        bottom: 12%;
-        right: 15%;
-        padding: 0.6rem 1.9rem;
-        border-radius: 5rem;
-        display: flex;
-        align-items: center;
-        transition: 0.2s all ease-in-out;
-        z-index: 500;
+    // .dm_btn {
+    //     line-height: 3rem;
+    //     font-size: 1.2rem;
+    //     position: absolute;
+    //     bottom: 12%;
+    //     right: 15%;
+    //     padding: 0.6rem 1.9rem;
+    //     border-radius: 5rem;
+    //     display: flex;
+    //     align-items: center;
+    //     transition: 0.2s all ease-in-out;
+    //     z-index: 500;
 
-        img {
-            margin: 0.3rem 1rem 0 0;
-        }
+    //     img {
+    //         margin: 0.3rem 1rem 0 0;
+    //     }
 
-        span {
-            font-weight: bold;
-            margin-left: 0.5rem;
-        }
-    }
+    //     span {
+    //         font-weight: bold;
+    //         margin-left: 0.5rem;
+    //     }
+    // }
 }
 
 
@@ -194,7 +199,7 @@ a {
 }
 
 .about_title {
-    font-size: 3rem;
+    font-size: 3.5rem;
     text-align: center;
     line-height: 6rem;
     position: absolute;
@@ -206,14 +211,14 @@ a {
     letter-spacing: 0.3rem;
     p {
         color: #c4c4c4;
-        font-size: 3rem;
+        font-size: 2.5rem;
         transition: 0.5s ease-in-out all;
     }
 }
 
 .about_contents {
     position: absolute;
-    bottom: -15rem;
+    bottom: -20rem;
     left: 25%;
     font-size: 1.25rem;
     line-height: 3rem;
@@ -675,58 +680,56 @@ a {
 #contec {
     width: 100%;
     height: 100vh;
-    position: relative;
+    // position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 10rem 8rem;
+    justify-content: space-between;
 }
 
 .contec_head{
-    margin-left: 8rem;
-    padding-top: 10rem; 
-    h2{
 
-        font-size: 4.8rem;
+    h2{
+        font-size: 3.8rem;
         font-weight: 400;
         letter-spacing: -0.3rem;
     }
 }
 
 .contec_inner{
-    margin: 30rem 0 0 8rem;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 300;
+    margin-top: 10rem;
 
     h5{
         margin-bottom: 2.5rem;
-        font-size: 2.25rem;
+        font-size: 2rem;
         font-weight: 400;
     }
-}
-
-.contec_guide{
-    margin: 5rem 0 0 8rem;
 }
 
 
 //js
 
-.white_dm {
-    border: 0.2rem solid #ffffff;
+// .white_dm {
+//     border: 0.2rem solid #ffffff;
 
-    &:hover {
-        background-color: #ffffff;
-        color: #000;
-    }
-}
+//     &:hover {
+//         background-color: #ffffff;
+//         color: #000;
+//     }
+// }
 
 
-.black_dm {
-    border: 0.2rem solid #000;
-    color: #000;
+// .black_dm {
+//     border: 0.2rem solid #000;
+//     color: #000;
 
-    &:hover {
-        background-color: #000;
-        color: #ffffff;
-    }
-}
+//     &:hover {
+//         background-color: #000;
+//         color: #ffffff;
+//     }
+// }
 
 .about_slide {
         font-size: 1.5rem;

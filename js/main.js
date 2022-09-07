@@ -25,30 +25,35 @@ function splitLetters(s_title) {
 }
 
 function changeTitle() {
-    let cw = s_title_arr[current];
-    let nw = current == s_title.length - 1 ? s_title_arr[0] : s_title_arr[current + 1];
-    let bw = s_title_arr[current];
-    // current 가 s_title.length보다 같으면 a:b
 
-    for (let j = 0; j < cw.length; j++) {
-        animateLetterOut(cw, j);
-    }
+    // window.addEventListener("wheel", e => {
+    //     if(e.deltaY > 0){
 
-    // for (let k = 1; k < bw.length+1; k++) {
-    //     upAnimateLetterOut(bw, k);
-    // }
+            let cw = s_title_arr[current];
+            let nw = current == s_title.length -1 ? s_title_arr[0] : s_title_arr[current + 1];
+            let bw = s_title_arr[current + 2];
+            // current 가 s_title.length보다 같으면 a:b
 
-    for (let j = 0; j < nw.length; j++) {
-        nw[j].className = `letter behind`;
-        nw[0].parentElement.style.opacity = 1;
-        animateLetterIn(nw, j);
-    }
+            for (let j = 0; j < cw.length; j++) {
+                animateLetterOut(cw, j);
+            }
 
-    // for (let j = 0; j <bw.length; j++){
-    //     backAnimateLetterOut(bw, j);
-    // }
+            for (let j = 0; j <= bw.length ; j++) {
+                // if(bw == s_title.length){
+                //     bw = s_title_arr[0];
+                    animateLetterUpOut(bw, j);
+                // }
+            }
 
-    current = (current == s_title_arr.length - 1) ? 0 : current + 1;
+            for (let j = 0; j < nw.length; j++) {
+                nw[j].className = `letter behind`;
+                nw[0].parentElement.style.opacity = 1;
+                animateLetterIn(nw, j);
+            }
+
+            current = (current == s_title_arr.length - 1) ? 0 : current + 1;
+    //     }
+    // });
 }
 
 function animateLetterOut(cw, j) {
@@ -57,29 +62,19 @@ function animateLetterOut(cw, j) {
     }, j * 80);
 }
 
-// function upAnimateLetterOut(bw, k) {
-//     setTimeout(function () {
-//         bw[k].className = 'letter out';
-//     }, k * 80);
-// }
+function animateLetterUpOut(bw, j) {
+    setTimeout(function () {
+        bw[j].className = 'letter out';
+    }, j * 80);
+}
+
 
 function animateLetterIn(nw, j) {
     setTimeout(function () {
         nw[j].className = 'letter in';
-
         // up(nw, j);
     }, 340 + (j * 80));
 }
-
-// function up(aa, b) {
-//     aa[b + 1].className = `letter out`;
-// }
-
-
-
-//스크롤 올릴 때 진행되는 함수
-
-
 
 
 window.addEventListener("scroll", (e) => {
@@ -122,7 +117,7 @@ window.addEventListener("scroll", (e) => {
             } else if (line <= 5) {
                 line = 5;
             }
-            middle_li.style.width = `${line}%`
+            middle_li.style.width = `${line}%`;
         } else {
             img_box.style.display = `block`;
             middle_li.style.opacity = `0`;
@@ -145,13 +140,18 @@ window.addEventListener("scroll", (e) => {
     const site_txt = document.querySelectorAll(".site_txt");
     const site_na = document.querySelectorAll(".site_name");
     const site_ex = document.querySelectorAll(".site_explanation");
+    const site_more = document.querySelector(".site_more");
+
+    const site_link = [
+        "https://myeongyunchoi.github.io/hotel/",
+        "https://myeongyunchoi.github.io/flower/",
+        "https://myeongyunchoi.github.io/book/",
+        "https://myeongyunchoi.github.io/project2/",
+        "https://myeongyunchoi.github.io/project1/"
+    ]
 
     let img_zoom = 0;
     let num = 0;
-
-
-
-
 
     const siteNameOut = i => {
         for (let j = 0; j < site_na.length; j++) {
@@ -194,6 +194,8 @@ window.addEventListener("scroll", (e) => {
             site_txt[i - 1].style.transform = `skew(0deg, 0deg)`;
             site_txt[i - 1].style.marginTop = `0`;
 
+            site_more.setAttribute("href", site_link[i-1]);
+
             siteNameOut(i);
             //site_na 변경 함수 호출
         } else {
@@ -201,17 +203,17 @@ window.addEventListener("scroll", (e) => {
             site_txt[i - 1].style = ``;
         }
     }
-    
+
     const site_over = document.querySelectorAll(".site_overlay");
     const site_vi = document.querySelectorAll(".site_visit");
 
-    for(let i = 0; i < site_img_li.length; i++){
+    for (let i = 0; i < site_img_li.length; i++) {
         site_img_li[i].addEventListener("mouseover", () => {
-            site_over[i].style.opacity = `0.5`;  
+            site_over[i].style.opacity = `0.5`;
             site_vi[i].classList.add("fade_in");
         });
         site_img_li[i].addEventListener("mouseout", () => {
-            site_over[i].style = ``;  
+            site_over[i].style = ``;
             site_vi[i].classList.remove("fade_in");
         });
     }
