@@ -51,33 +51,40 @@ function changeTitle() {
 function animateLetterOut(cw, j) {
     setTimeout(function () {
         cw[j].className = 'letter out';
-    }, j * 50);
+    }, j * 30);
 }
 
 
 function animateLetterIn(nw, j) {
     setTimeout(function () {
         nw[j].className = 'letter in';
-    }, 340 + (j * 50));
+    }, 340 + (j * 30));
 }
 
 function animateLetterUpOut(bw, j) {
     setTimeout(function () {
         bw[j].className = 'letter out';
-    }, j * 50);
+    }, j * 30);
 }
 
+const win_hi = window.innerHeight;
+
+const img_over = document.querySelector(".img_overlay");
+const img_box = document.querySelector(".imgbox");
+const middle_li = document.querySelector(".middle_line");
+const pj = document.getElementById("project");
+const pj_top = pj.offsetTop;
+
+let win_top = window.scrollY;
+
+if (win_top >= pj_top) {
+    pj.style.opacity = `1`;
+} else {
+    pj.style = ``;
+}
 
 window.addEventListener("scroll", (e) => {
-
-    const win_hi = window.innerHeight;
-
-    const img_over = document.querySelector(".img_overlay");
-    const img_box = document.querySelector(".imgbox");
-    const middle_li = document.querySelector(".middle_line");
-    const pj = document.getElementById("project");
-    const pj_top = pj.offsetTop;
-
+    
     let win_top = window.scrollY;
     let zoom_val = win_top - (win_hi + 200);
     let amount = 0;
@@ -123,7 +130,7 @@ window.addEventListener("scroll", (e) => {
     } else {
         pj.style = ``;
     }
-
+    
     const site_li = document.querySelectorAll(".site_view li");
     const ss = site_li[0].clientHeight;
     const site_img_li = document.querySelectorAll(".site_img_box");
@@ -168,6 +175,12 @@ window.addEventListener("scroll", (e) => {
             current = i - 1;
             changeTitle();
             siteNameOut(i);
+        }
+
+        if(win_top >= pj_top + win_hi){
+            s_title[0].style.opacity =`0`;
+        }else{
+            s_title[0].style.opacity =`1`;
         }
 
         if (win_top < li_first_top) {
@@ -234,3 +247,6 @@ window.addEventListener("scroll", (e) => {
         }
     }
 })
+
+
+
