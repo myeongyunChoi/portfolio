@@ -228,7 +228,7 @@ window.addEventListener("scroll", (e) => {
 
         if (win_top >= con_ul_top){
             contec_ul[i].classList.remove(`slide_down`);
-            middle_li.style.width = `${i*33}%`;
+            middle_li.style.width = `${i*40}%`;
         }else{
             contec_ul[i].classList.add(`slide_down`);
         }

@@ -6,20 +6,9 @@ const left_piece = document.querySelector(".left_page");
 const hook = document.querySelector(".hook");
 const right_piece = document.querySelector(".right_page");
 
-const dm_btn = document.querySelector(".dm_btn");
-const dm_img = document.querySelector(".dm_btn img");
-
 const about_t = document.querySelector(".about_title");
 const about_c = document.querySelector(".about_contents");
 const arrow = document.querySelector(".arrow");
-
-dm_btn.addEventListener("mouseover", () => {
-    dm_img.setAttribute("src", "img/dm_icon_up.png");
-});
-
-dm_btn.addEventListener("mouseout", () => {
-    dm_img.setAttribute("src", "img/dm_icon.png");
-});
 
 open_page.addEventListener("wheel", function openPage(e) {
 
