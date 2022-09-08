@@ -161,6 +161,41 @@ a {
   background-color: #ffffff;
 }
 
+.dm_btn {
+  line-height: 3rem;
+  font-size: 1.2rem;
+  position: fixed;
+  bottom: 9rem;
+  right: 15%;
+  padding: 0.6rem 1.9rem;
+  border-radius: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.2s all ease-in-out;
+  transition: 0.2s all ease-in-out;
+  z-index: 500;
+  mix-blend-mode: difference;
+  border: 0.2rem solid #ffffff;
+}
+
+.dm_btn img {
+  margin: 0.3rem 1rem 0 0;
+}
+
+.dm_btn span {
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+.dm_btn:hover {
+  background-color: #ffffff;
+  color: #000;
+}
+
 .skill {
   width: 350%;
   height: 100vh;
