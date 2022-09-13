@@ -27,9 +27,10 @@ function splitLetters(s_title) {
 function changeTitle() {
 
     let cw = s_title_arr[current];
-    let nw = current == s_title.length - 1 ? s_title_arr[0] : s_title_arr[current + 1];
+    let nw = current == s_title.length + 1 ? s_title_arr[0] : s_title_arr[current + 1];
+    //nw = if(cur == 7){ cur = 0} else{ cur++ }
     let bw = current == s_title.length - 2 ? s_title_arr[0] : s_title_arr[current + 2];
-    // current 가 s_title.length와 같으면 a 아니면 b
+    // //nw = if(cur == 4){ cur = 0} else{ cur += 2 }
 
     for (let j = 0; j < cw.length; j++) {
         animateLetterOut(cw, j);
@@ -44,27 +45,25 @@ function changeTitle() {
         nw[0].parentElement.style.opacity = 1;
         animateLetterIn(nw, j);
     }
-
-    current = (current == s_title_arr.length - 1) ? 0 : current + 1;
 }
 
 function animateLetterOut(cw, j) {
     setTimeout(function () {
         cw[j].className = 'letter out';
-    }, j * 30);
+    }, j * 50);
 }
 
 
 function animateLetterIn(nw, j) {
     setTimeout(function () {
         nw[j].className = 'letter in';
-    }, 340 + (j * 30));
+    }, 340 + (j * 50));
 }
 
 function animateLetterUpOut(bw, j) {
     setTimeout(function () {
         bw[j].className = 'letter out';
-    }, j * 30);
+    }, j * 50);
 }
 
 const win_hi = window.innerHeight;
@@ -169,12 +168,11 @@ window.addEventListener("scroll", (e) => {
         let li_top = site_li[i].offsetTop + pj_top - (win_hi * 0.38);
         //부모 요소 탑 값에 자식 요소 탑값을 더한 값
 
-        //s_title 변경 함수 호출
 
         if (window.scrollY > li_top && window.scrollY < li_top + 50) {
             current = i - 1;
             changeTitle();
-            siteNameOut(i);
+            siteNameOut(i);            
         }
 
         if(win_top >= pj_top + win_hi){
@@ -233,7 +231,6 @@ window.addEventListener("scroll", (e) => {
     }
 
     const contec_ul = document.querySelectorAll("#contec ul");
-    // console.log(contec_ul);
 
     for(let i = 0; i < contec_ul.length; i++){
 
