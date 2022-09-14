@@ -162,6 +162,10 @@ window.addEventListener("scroll", (e) => {
         s_title[i].style.opacity=`1`;
     }
 
+    const changeLink = i => {
+        site_more.setAttribute("href", site_link[i-1]);
+    }
+
 
     //siteli_img가 site_li보다 하나 더 적음 1부터 for문을 시작함
     for (let i = 1; i < site_li.length; i++) {
@@ -174,7 +178,8 @@ window.addEventListener("scroll", (e) => {
         if (window.scrollY > li_top && window.scrollY < li_top + 50) {
             current = i - 1;
             changeTitle();
-            siteNameOut(i);            
+            siteNameOut(i);
+            changeLink(i);            
         }
 
         if(win_top >= pj_top + win_hi){
@@ -201,9 +206,6 @@ window.addEventListener("scroll", (e) => {
 
             site_txt[i - 1].style.transform = `skew(0deg, 0deg)`;
             site_txt[i - 1].style.marginTop = `0`;
-
-            site_more.setAttribute("href", site_link[i - 1]);
-
         } else {
             site_img_li[i - 1].style = ``;
             site_txt[i - 1].style = ``;
