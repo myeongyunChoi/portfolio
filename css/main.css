@@ -633,6 +633,8 @@ a {
   opacity: 0;
   position: absolute;
   top: 1.25rem;
+  -webkit-transition: 1s all ease-in-out;
+  transition: 1s all ease-in-out;
 }
 
 .site_txt {

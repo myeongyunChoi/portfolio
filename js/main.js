@@ -155,9 +155,11 @@ window.addEventListener("scroll", (e) => {
         for (let j = 0; j < site_na.length; j++) {
             site_na[j].classList.add("fade_out");
             site_ex[j].classList.add("fade_out");
+            s_title[j].style.opacity=`0`;
         }
         site_na[i].classList.remove("fade_out");
         site_ex[i].classList.remove("fade_out");
+        s_title[i].style.opacity=`1`;
     }
 
 
