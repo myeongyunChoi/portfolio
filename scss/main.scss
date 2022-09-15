@@ -5,6 +5,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;600;700;800&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@300;400;500;600;700&display=swap');
+
 
 * {
     margin: 0;
@@ -114,34 +116,36 @@ a {
     background-color: #000;
     transition: 1s all ease-in-out;
     position: relative;
-    font-family: 'Oswald', sans-serif;
-    letter-spacing: 0.7rem;
+
 
     .left_txt {
         position: absolute;
-        top: 50%;
-        left: 15rem;
+        top: 60%;
+        left: 7.5rem;
         color: #ffffff;
         transform: translateY(-50%);
 
         h1 {
-            font-size: 10rem;
+            font-size: 9rem;
             font-weight: 50;
-            margin-bottom: 5rem;
-            font-weight: 600;
-            letter-spacing: 0.5rem;
+            margin-bottom: 15rem;
+            font-weight: 500;
+            letter-spacing: -0.15rem;
+            font-family: 'Cormorant Unicase', serif;
+            text-align: center;
         }
 
         h3 {
             font-size: 4rem;
             font-weight: 400;
+            letter-spacing: 0.15rem;
         }
 
         h4 {
             font-size: 3rem;
             margin-top: 3rem;
             font-weight: 200;
-            letter-spacing: 0.3rem;
+            letter-spacing: 0.07rem;
         }
     }
 }
