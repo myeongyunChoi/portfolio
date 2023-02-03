@@ -83,7 +83,7 @@ if (win_top >= pj_top) {
 }
 
 window.addEventListener("scroll", (e) => {
-    
+
     let win_top = window.scrollY;
     let zoom_val = win_top - (win_hi + 200);
     let amount = 0;
@@ -129,7 +129,7 @@ window.addEventListener("scroll", (e) => {
     } else {
         pj.style = ``;
     }
-    
+
     const site_li = document.querySelectorAll(".site_view li");
     const ss = site_li[0].clientHeight;
     const site_img_li = document.querySelectorAll(".site_img_box");
@@ -155,15 +155,15 @@ window.addEventListener("scroll", (e) => {
         for (let j = 0; j < site_na.length; j++) {
             site_na[j].classList.add("fade_out");
             site_ex[j].classList.add("fade_out");
-            s_title[j].style.opacity=`0`;
+            s_title[j].style.opacity = `0`;
         }
         site_na[i].classList.remove("fade_out");
         site_ex[i].classList.remove("fade_out");
-        s_title[i].style.opacity=`1`;
+        s_title[i].style.opacity = `1`;
     }
 
     const changeLink = i => {
-        site_more.setAttribute("href", site_link[i-1]);
+        site_more.setAttribute("href", site_link[i - 1]);
     }
 
 
@@ -179,13 +179,13 @@ window.addEventListener("scroll", (e) => {
             current = i - 1;
             changeTitle();
             siteNameOut(i);
-            changeLink(i);            
+            changeLink(i);
         }
 
-        if(win_top >= pj_top + win_hi){
-            s_title[0].style.opacity =`0`;
-        }else{
-            s_title[0].style.opacity =`1`;
+        if (win_top >= pj_top + win_hi) {
+            s_title[0].style.opacity = `0`;
+        } else {
+            s_title[0].style.opacity = `1`;
         }
 
         if (win_top < li_first_top) {
@@ -236,18 +236,15 @@ window.addEventListener("scroll", (e) => {
 
     const contec_ul = document.querySelectorAll("#contec ul");
 
-    for(let i = 0; i < contec_ul.length; i++){
+    for (let i = 0; i < contec_ul.length; i++) {
 
-        const con_ul_top = contec_ul[i].offsetTop - (win_hi*0.9);
+        const con_ul_top = contec_ul[i].offsetTop - (win_hi * 0.9);
 
-        if (win_top >= con_ul_top){
+        if (win_top >= con_ul_top) {
             contec_ul[i].classList.remove(`slide_down`);
-            middle_li.style.width = `${i*40}%`;
-        }else{
+            middle_li.style.width = `${i * 40}%`;
+        } else {
             contec_ul[i].classList.add(`slide_down`);
         }
     }
-})
-
-
-
+});

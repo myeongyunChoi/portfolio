@@ -28,7 +28,7 @@ li {
 
 a {
   text-decoration: none;
-  color: white;
+  color: #000;
 }
 
 #wrap {
@@ -169,6 +169,7 @@ a {
 }
 
 .about_contents {
+  height: 55vh;
   position: absolute;
   bottom: -15rem;
   left: 33.3rem;
@@ -181,6 +182,7 @@ a {
   flex-direction: column;
   justify-content: space-evenly;
 }
+
 .about_contents > h4 {
   font-size: 2rem;
   margin-top: 4rem;
@@ -647,6 +649,22 @@ a {
   font-size: 1.5rem;
   transition: 0.5s ease-in-out all;
   margin-top: 1rem;
+}
+
+.notion{
+  margin-top: 5rem;
+}
+
+.notion h5 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.about_notion h5 {
+  font-size: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
 }
 
 .fade_in {
