@@ -319,7 +319,7 @@ a {
   -webkit-clip-path: circle(40%);
           clip-path: circle(40%);
 }
-.chart .chart_inner {
+/* .chart .chart_inner {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -329,8 +329,8 @@ a {
   width: 95%;
   height: 95%;
   background-color: #000;
-  transition: ease 0.5s all;
-}
+  transition: 0.5s all ease-in-out;
+} */
 
 .active_title {
   font-size: 2rem;

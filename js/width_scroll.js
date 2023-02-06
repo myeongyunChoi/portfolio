@@ -173,7 +173,7 @@ window.onload = () => {
                 percent = 70;
             }
 
-            let i = 0;
+            // let i = 0;
             // setInterval(function () {
             //     if (i <= percent) {
             //         perc(i);

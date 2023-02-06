@@ -87,6 +87,7 @@ window.addEventListener("scroll", (e) => {
     let win_top = window.scrollY;
     let zoom_val = win_top - (win_hi + 200);
     let amount = 0;
+    let line = zoom_val * 0.037;
 
     if (win_top >= win_hi) {
         img_over.style.background = "white";
@@ -100,11 +101,9 @@ window.addEventListener("scroll", (e) => {
     function zoom() {
         amount = 1 + zoom_val * 0.003;
         opa = 1 - zoom_val * 0.001;
-        line = zoom_val * 0.037;
 
         img_box.style.transform = `scale(${amount},${amount})`;
         img_box.style.opacity = `${opa}`;
-
         if (opa <= 0) {
             img_box.style = ``;
             img_box.style.display = `none`;
@@ -234,15 +233,17 @@ window.addEventListener("scroll", (e) => {
         middle_li.style.width = `1%`;
     }
 
+
+    if (win_top === contec_top ) {
+        middle_li.style.width = `90%`;
+    }
+
     const contec_ul = document.querySelectorAll("#contec ul");
 
     for (let i = 0; i < contec_ul.length; i++) {
-
         const con_ul_top = contec_ul[i].offsetTop - (win_hi * 0.9);
-
         if (win_top >= con_ul_top) {
             contec_ul[i].classList.remove(`slide_down`);
-            middle_li.style.width = `${i * 40}%`;
         } else {
             contec_ul[i].classList.add(`slide_down`);
         }
